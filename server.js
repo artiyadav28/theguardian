@@ -5,8 +5,9 @@ const app = express()
 app.get('/getinfo',async (req,res)=>{
     try{
         var dataToSend;
+//console.log( process.env.PATH );
         // spawn new child process to call the python script
-        const python = spawn('python', ['version-checker/main.py']);
+        const python = spawn('python3',['version-checker/main.py','git_clone']);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');

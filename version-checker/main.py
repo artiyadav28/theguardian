@@ -1,6 +1,7 @@
 import os
 from utils.package_json import package_json_parse, package_json_check
 from utils.requirements_txt import requirements_txt_parse, requirements_txt_check
+import sys
 
 def find_all(name, path):
     result = []
@@ -9,8 +10,8 @@ def find_all(name, path):
             result.append(os.path.join(root, name))
     return result
 
-packages=find_all("package.json","./")
-requirements=find_all("requirements.txt","./")
+packages=find_all("package.json",sys.argv[1])
+requirements=find_all("requirements.txt",sys.argv[1])
 
 output=dict()
 for path in packages:

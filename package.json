@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "compare-versions": "^4.1.3",
     "concurrently": "^7.2.2",
     "express": "^4.18.1"
   }

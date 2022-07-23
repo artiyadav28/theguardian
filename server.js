@@ -1,13 +1,23 @@
 const express = require('express')
 const {spawn} = require('child_process');
 const app = express()
+const bodyParser = require('body-parser')
 
-app.get('/getinfo',async (req,res)=>{
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded())
+
+// parse application/json
+app.use(bodyParser.json())
+app.use(express.urlencoded({extended:true}));
+app.post('/getinfo',async (req,res)=>{
     try{
+        const {url}=req.body;
+        console.log(url);
         var dataToSend;
 //console.log( process.env.PATH );
         // spawn new child process to call the python script
-        const python = spawn('python3',['version-checker/main.py','git_clone']);
+
+        const python = spawn('python3',['version-checker/main.py',url]);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');
@@ -16,22 +26,14 @@ app.get('/getinfo',async (req,res)=>{
         // in close event we are sure that stream from child process is closed
         python.on('close', (code) => {
         console.log(`child process close all stdio with code ${code}`);
+
         // send data to browser
+        // console.log("hi");
+        // console.log(dataToSend);
+        // const result=JSON.parse(dataToSend);
         console.log(dataToSend);
-        res.send(dataToSend)
+        res.send(dataToSend);
         });
-        // const obj={
-        //     score:79,
-        //     param1:{
-        //         text:"According to number of forks",
-        //         score:46
-        //     },
-        //     param2:{
-        //         text:"According to recent releases",
-        //         score:98
-        //     }
-        // }
-        // res.send(obj);
     }catch(e){
         console.log(e);
     }

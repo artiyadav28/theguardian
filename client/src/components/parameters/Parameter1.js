@@ -16,6 +16,8 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const Parameter1 = ({ repo: { loading, info }}) => {
+
+  // if(!loading && info!=null) console.log(info["package.json"]);
   return (
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
@@ -27,8 +29,8 @@ const Parameter1 = ({ repo: { loading, info }}) => {
           </>
         ) : (
           <>
-            <h3>{info.param1.score}</h3>
-            <h3>{info.param1.text}</h3>
+            {/* <h3>{info["package.json"]}</h3> */}
+            {/* <h3>{info['requirements.txt']}</h3> */}
           </>
         )}
       </Container>

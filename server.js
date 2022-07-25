@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded())
 // parse application/json
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}));
-app.post('/getinfo',async (req,res)=>{
+app.post('/versionChecker',async (req,res)=>{
     try{
         const {url}=req.body;
         console.log(url);
@@ -18,6 +18,35 @@ app.post('/getinfo',async (req,res)=>{
         // spawn new child process to call the python script
 
         const python = spawn('python3',['version-checker/main.py',url]);
+        // collect data from script
+        python.stdout.on('data', function (data) {
+         console.log('Pipe data from python script ...');
+         dataToSend = data.toString();
+        });
+        // in close event we are sure that stream from child process is closed
+        python.on('close', (code) => {
+        console.log(`child process close all stdio with code ${code}`);
+
+        // send data to browser
+        // console.log("hi");
+        // console.log(dataToSend);
+        // const result=JSON.parse(dataToSend);
+        console.log(dataToSend);
+        res.send(dataToSend);
+        });
+    }catch(e){
+        console.log(e);
+    }
+})
+app.post('/legitPercent',async (req,res)=>{
+    try{
+        const {url}=req.body;
+        console.log(url);
+        var dataToSend;
+//console.log( process.env.PATH );
+        // spawn new child process to call the python script
+
+        const python = spawn('python3',['legit-percent/main.py',url]);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');

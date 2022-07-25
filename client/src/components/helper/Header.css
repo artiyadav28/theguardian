@@ -1,9 +1,9 @@
 #header {
     /* position: absolute; */
-    width: 220px;
+    width: 230px;
   }
   #header .pro-sidebar {
-    height: 100vh;
+    height: 100%;
   }
   #header .closemenu {
     color: #000;

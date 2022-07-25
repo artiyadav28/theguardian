@@ -60,8 +60,8 @@ const Header = ({repo:{loading,info}}) => {
           <SidebarContent>
             <Menu iconShape="square">
               <MenuItem active={path.includes('/dashboard')} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
-              <MenuItem active={path.includes('/parameter1')} icon={<FaList />}>Parameter 1 <Link to="/parameter1"/></MenuItem>
-              <MenuItem active={path.includes('/parameter2')} icon={<FaRegHeart />}>Parameter 2 <Link to="/parameter2"/></MenuItem>
+              <MenuItem active={path.includes('/versionChecker')} icon={<FaList />}>Version Checker <Link to="/versionChecker"/></MenuItem>
+              <MenuItem active={path.includes('/legitPercent')} icon={<FaRegHeart />}>Legit Percent <Link to="/legitPercent"/></MenuItem>
               <MenuItem active={path.includes('/parameter3')} icon={<RiPencilLine />}>Parameter 3 <Link to="/parameter3"/></MenuItem>
               <MenuItem active={path.includes('/parameter4')} icon={<BiCog />}>Parameter 4 <Link to="/parameter4"/></MenuItem>
             </Menu>

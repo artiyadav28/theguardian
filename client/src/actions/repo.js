@@ -1,31 +1,35 @@
 import axios from "axios";
 
-export const getRepoDetails = (url) => async (dispatch) => {
+export const getRepoVersionDetails = (url) => async (dispatch) => {
     try{
         dispatch({
          type: 'SEARCH_INFO',
         })
-        console.log(url);
-        // const options = {
-        //     method: 'post',
-        //     url: '/getinfo',
-        //     data: {
-        //         url:url
-        //     }
-        //   };
-         const res = await axios.post('/getinfo',{url:url})
-        // const res=await axios(options);
-         const result=res.data.replace(/'/g, '"')
-        //  console.log(result);
-         const info=JSON.parse(result);
 
-        //  console.log(res.data);
-        //  console.log(typeof res.data);
-        // console.log(info);
-        // console.log(typeof info);
+         const res = await axios.post('/versionChecker',{url:url})
+         const result=res.data.replace(/'/g, '"')
+         const info=JSON.parse(result);
          dispatch({
              type: 'SET_INFO',
              payload: info
+         })
+     }catch(e){
+          console.log(e)
+     }
+};
+export const getRepoLegitPercentDetails = (url) => async (dispatch) => {
+    try{
+        dispatch({
+         type: 'SEARCH_LEGIT',
+        })
+         const res = await axios.post('/legitPercent',{url:url})
+        //  const result=res.data.replace(/'/g, '"')
+        //  const info=JSON.parse(result);
+        //  console.log(typeof res.data);
+        //  console.log(res.data);
+         dispatch({
+             type: 'SET_LEGIT',
+             payload: res.data
          })
      }catch(e){
           console.log(e)

@@ -19,10 +19,14 @@ def find_all(name, path):
 def clone():
     global URL, PATH
     URL = sys.argv[1]
+    if URL[-1] == '/':
+        URL = URL[:-1]
+    if URL[-4:] == '.git':
+        URL = URL[:-4]
     PATH = PATH / URL.split('/')[-1]
     Repo.clone_from(URL, PATH)
 
-clone()
+# clone()
 try:
     packages=find_all("package.json",PATH)
     requirements=find_all("requirements.txt",PATH)
@@ -53,4 +57,5 @@ try:
         output["requirements"]=v
     print(output)
 finally:
-    shutil.rmtree(PATH)
+    # shutil.rmtree(PATH)
+    pass

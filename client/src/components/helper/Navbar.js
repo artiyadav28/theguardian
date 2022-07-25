@@ -9,7 +9,7 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{background:"#FED322",color:"black"}}>
+      <AppBar position="static" style={{background:"white",color:"black"}}>
         <Toolbar variant="dense" sx={{ mr: 2 }}>
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <VerifiedUserIcon />

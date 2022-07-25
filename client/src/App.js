@@ -14,19 +14,37 @@ import LegitPercent from './components/parameters/LegitPercent';
 const App=()=> {
 
   return (
+    // <Provider store={store}>
+    // <Router>
+    //   <Navbar />
+    //   <div className='flex-container'>
+    //   <Header />
+    //   <main>
+    //   <Routes>
+    //     <Route path={'/'} element={<Home />} />
+    //     <Route path={'/dashboard'} element={<Dashboard />} />
+    //     <Route path={'/versionChecker'} element={<VersionChecker />} />
+    //     <Route path={'/legitPercent'} element={<LegitPercent />} />
+    //   </Routes>
+    //   </main>
+    //   </div>
+    // </Router>
+    // </Provider>
     <Provider store={store}>
     <Router>
-      <Navbar />
-      <div className='flex-container'>
-      <Header />
-      <main>
-      <Routes>
-        <Route path={'/'} element={<Home />} />
-        <Route path={'/dashboard'} element={<Dashboard />} />
-        <Route path={'/versionChecker'} element={<VersionChecker />} />
-        <Route path={'/legitPercent'} element={<LegitPercent />} />
-      </Routes>
-      </main>
+    <Navbar />
+      <div style={{display:"flex",flexDirection:"row"}}>
+        <div style={{width:"20%"}}>
+          <Header />
+        </div>
+        <div style={{width:"80%"}}>
+          <Routes>
+            <Route path={'/'} element={<Home />} />
+            <Route path={'/dashboard'} element={<Dashboard />} />
+            <Route path={'/versionChecker'} element={<VersionChecker />} />
+            <Route path={'/legitPercent'} element={<LegitPercent />} />
+          </Routes>
+        </div>
       </div>
     </Router>
     </Provider>

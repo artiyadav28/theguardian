@@ -15,8 +15,9 @@ import { getRepoLegitPercentDetails } from "../../actions/repo";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import StickyHeadTable from "./Table2";
-
-const color = ["red", "orange", "yellow", "green"];
+import ProgressProvider from "./ProgressProvider";
+import "./style.css"
+const color = ["#B20600", "#E45826", "#F0A500", "#76BA99"];
 const LegitPercent = ({
   repo: { loading, legit },
   getRepoLegitPercentDetails,
@@ -27,13 +28,14 @@ const LegitPercent = ({
   const [percentage, setPercentage]= useState(0);
   const handleClick = () => {
     getRepoLegitPercentDetails(repo);
-    setRepo("");
+    // setRepo("");
   };
   useEffect(()=>{
     if(legit){
       for(const repoName in legit){
         setName(repoName);
         setPercentage(legit[repoName].percentage);
+        // setPercentage(78);
         const forks={
           name:"forks",
           number: legit[repoName].forks[0],
@@ -59,6 +61,8 @@ const LegitPercent = ({
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
         <Box
+          className="styled_container"
+          // style={{backgroundColor:"white",padding:"2rem", borderRadius:"0.7rem"}}
           sx={{
             width: 500,
             maxWidth: "100%",
@@ -76,7 +80,7 @@ const LegitPercent = ({
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#FED322", color: "black" }}
+            style={{ background: "#AB46D2", color: "black" }}
           >
             Go
           </Button>
@@ -92,9 +96,10 @@ const LegitPercent = ({
             {/* {console.log(legit)} */}
               <h3>{name}</h3>
               <div style={{ width: 200, height: 200 }}>
-              <CircularProgressbar
-                value={percentage}
-                text={`${percentage}%`}
+              <ProgressProvider valueStart={0} valueEnd={percentage}>
+                {(value) => <CircularProgressbar
+                value={value}
+                text={`${value}%`}
                 styles={buildStyles({
                   // Rotation of path and trail, in number of turns (0-1)
                   // rotation: 0.25,
@@ -106,18 +111,19 @@ const LegitPercent = ({
                   // textSize: "16px",
 
                   // How long animation takes to go from one percentage to another, in seconds
-                  // pathTransitionDuration: 0.5,
+                  pathTransitionDuration: 2,
 
                   // Can specify path transition in more detail, or remove it entirely
                   // pathTransition: 'none',
 
                   // Colors
-                  pathColor: `${color[Math.floor(percentage/25)]}`,
-                  textColor: `${color[Math.floor(percentage/25)]}`,
-                  // trailColor: "#d6d6d6",
+                  pathColor: `${color[Math.floor(value/25)]}`,
+                  textColor: `${color[Math.floor(value/25)]}`,
+                  trailColor: "#d6d6d6",
                   // backgroundColor: "#3e98c7",
                 })}
-              />
+              />}
+              </ProgressProvider>
             </div>  
               <h3>Individual Scores</h3>
               <StickyHeadTable rows={rows}/>

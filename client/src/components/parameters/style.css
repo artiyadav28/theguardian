@@ -1,0 +1,8 @@
+.styled_container{
+    background-color:white;
+    padding:2rem;
+    border-radius: 0.3rem;
+    -webkit-box-shadow: -1px 1px 61px -50px rgba(0,0,0,1);
+    -moz-box-shadow: -1px 1px 61px -50px rgba(0,0,0,1);
+    box-shadow: -1px 1px 61px -50px rgba(0,0,0,1);
+}

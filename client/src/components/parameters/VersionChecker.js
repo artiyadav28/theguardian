@@ -15,14 +15,14 @@ import { getRepoVersionDetails } from "../../actions/repo";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import StickyHeadTable from "./Table"
-
+import "./style.css"
 const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
   const [repo, setRepo] = useState("");
   const [packages, setPackages] =useState([]);
   const [requirements, setRequirements] =useState([]);
   const handleClick = () => {
     getRepoVersionDetails(repo);
-    setRepo("");
+    // setRepo("");
   };
   useEffect(()=>{
     if(info && info.package){
@@ -60,6 +60,7 @@ const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
         <Box
+          className="styled_container"
           sx={{
             width: 500,
             maxWidth: "100%",
@@ -77,7 +78,7 @@ const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#FED322", color: "black" }}
+            style={{ background: "#AB46D2", color: "black" }}
           >
             Go
           </Button>

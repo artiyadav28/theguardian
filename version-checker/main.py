@@ -8,6 +8,7 @@ import shutil
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
 PATH = BASE_DIR / "cloned_repos"
+ERROR_MESSAGE = "SOMETHING WENT WRONG, PLEASE TRY AGAIN."
 
 def find_all(name, path):
     result = []
@@ -27,11 +28,11 @@ def clone():
     Repo.clone_from(URL, PATH)
 
 # clone()
+output=dict()
 try:
     packages=find_all("package.json",PATH)
     requirements=find_all("requirements.txt",PATH)
 
-    output=dict()
     for path in packages:
         with open(path,'r') as f:
             modules=package_json_parse(f)
@@ -55,7 +56,9 @@ try:
                 d["latest"]=module[2]
                 v[module[0]]=d
         output["requirements"]=v
-    print(output)
+except:
+    output = dict()
+    output["error"] = ERROR_MESSAGE
 finally:
+    print(output)
     # shutil.rmtree(PATH)
-    pass

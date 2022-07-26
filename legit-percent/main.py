@@ -24,6 +24,7 @@ PAGE_LIMIT = 100
 REPO_INFO = {}
 
 DEBUG = 1
+ERROR_MESSAGE = "SOMETHING WENT WRONG, PLEASE TRY AGAIN."
 
 def init():
     global GITHUB_TOKEN
@@ -58,32 +59,34 @@ def fillRepoInfo():
     r = requests.get(API_URL, auth=HTTPBasicAuth("", GITHUB_TOKEN))
     REPO_INFO = json.loads(r.text)
 
-if __name__ == "__main__":
-    ERROR = {}
-    ERROR_MESSAGE = "SOMETHING WENT WRONG, PLEASE TRY AGAIN."
+def main():
+    REPORT = {}
     try:
         check, err = init()
         if not check:
             if DEBUG:
                 if err == "NOTA":
-                    ERROR['message'] = "TOKEN LIMIT EXPIRED. PLEASE WAIT"
+                    REPORT['error'] = "TOKEN LIMIT EXPIRED. PLEASE WAIT"
                 else:
-                    ERROR['message'] = f"SOMETHING WRONG WITH TOKEN: {err}"
+                    REPORT['error'] = f"SOMETHING WRONG WITH TOKEN: {err}"
             else:
-                ERROR['message'] = ERROR_MESSAGE
-            print(json.dumps(ERROR, indent=4))
-            exit(0)
+                REPORT['error'] = ERROR_MESSAGE
+            return REPORT
         fillRepoInfo()
         if not chooseOptimal():
             if DEBUG:
-                ERROR['message'] = "TOKEN LIMIT INSUFFICIENT"
+                REPORT['error'] = "TOKEN LIMIT INSUFFICIENT"
             else:
-                ERROR['message'] = ERROR_MESSAGE
-            print(json.dumps(ERROR, indent=4))
-            exit(0)
+                REPORT['error'] = ERROR_MESSAGE
+            return REPORT
 
         REPORT = check_legit.generateReport(REPO_INFO, GITHUB_TOKEN)
-        print(json.dumps(REPORT, indent=4))
+        return REPORT
     except:
-        ERROR['message'] = ERROR_MESSAGE
-        print(json.dumps(ERROR, indent=4))
+        REPORT['error'] = ERROR_MESSAGE
+        return REPORT
+
+if __name__ == "__main__":
+    REPORT = main()
+    print(json.dumps(REPORT, indent=4))
+    

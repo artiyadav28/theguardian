@@ -32,7 +32,7 @@ def main(url):
     global URL
     URL = url
     try:
-        clone()
+        # clone()
         output=dict()
         packages, requirements = find_all(PATH)
         
@@ -63,8 +63,8 @@ def main(url):
         output = dict()
         output["error"] = ""
     finally:
-        if os.path.exists(PATH):
-            shutil.rmtree(PATH)
+        # if os.path.exists(PATH):
+        #     shutil.rmtree(PATH)
         if "error" in output.keys():
             return False
         print(json.dumps(output, indent=4))

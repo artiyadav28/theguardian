@@ -1,11 +1,12 @@
 import { FaGalacticSenate } from "react-icons/fa";
-import { SET_INFO,SEARCH_INFO,SET_LEGIT,SEARCH_LEGIT,SET_SENSITIVE,SEARCH_SENSITIVE,SET_PYPI,SEARCH_PYPI } from "../actions/types";
+import { SET_INFO,SEARCH_INFO,SET_LEGIT,SEARCH_LEGIT,SET_SENSITIVE,SEARCH_SENSITIVE,SET_PYPI,SEARCH_PYPI, SET_NPM,SEARCH_NPM } from "../actions/types";
 const initialState= {
     loading: false,
     info: null,
     legit:null,
     sensitive:null,
-    pypi:null
+    pypi:null,
+    npm:null
 }
 
 function repo (state = initialState , action){
@@ -58,6 +59,18 @@ function repo (state = initialState , action){
                 ...state,
                 loading:true,
                 pypi:null
+            }
+        case SET_NPM :
+            return {
+                ...state,
+                loading:false,
+                npm:payload
+            }
+        case SEARCH_NPM:
+            return {
+                ...state,
+                loading:true,
+                npm:null
             }
         default:
             return state;

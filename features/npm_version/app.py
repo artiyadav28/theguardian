@@ -18,11 +18,9 @@ def download_package():
     global URL, PATH, NAME
     try:
         package_name = URL.split('/')[-1]
-
-        p = Popen(['npm','v',package_name,'dist.tarball'], stdout=PIPE, stderr=PIPE)
+        p = Popen(['npm','v',package_name,'dist.tarball'], stdout=PIPE, stderr=PIPE, shell=True)
         tarballURL = p.stdout.read().strip().decode()
         name = tarballURL.split('/')[-1]
-
         if os.path.isfile(PATH / name):
             os.remove(PATH / name)
         if os.path.exists(PATH / name[:-4]):

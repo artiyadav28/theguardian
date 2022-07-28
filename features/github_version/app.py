@@ -32,10 +32,11 @@ def main(url):
     global URL
     URL = url
     try:
-        # clone()
+        clone()
         output=dict()
         packages, requirements = find_all(PATH)
         
+        packageFlag, requirementsFlag = True, True
         for path in packages:
             with open(path,'r') as f:
                 modules=package_json_parse(f)
@@ -46,6 +47,8 @@ def main(url):
                 d["current"]=module[1]
                 d["latest"]=module[2]
                 v[module[0]]=d
+            if len(v) > 0:
+                packageFlag = False
             output["package"]=v
         
         for path in requirements:
@@ -58,15 +61,18 @@ def main(url):
                     d["current"]=module[1]
                     d["latest"]=module[2]
                     v[module[0]]=d
+            if len(v) > 0:
+                requirementsFlag = False
             output["requirements"]=v
     except:
         output = dict()
         output["error"] = ""
     finally:
-        # if os.path.exists(PATH):
-        #     shutil.rmtree(PATH)
+        if os.path.exists(PATH):
+            shutil.rmtree(PATH)
         if "error" in output.keys():
             return False
+        if packageFlag and requirementsFlag:
+            output = {"error":"No vulnerable dependencies found"}
         print(json.dumps(output, indent=4))
         return True
-        

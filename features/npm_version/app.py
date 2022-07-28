@@ -18,9 +18,11 @@ def download_package():
     global URL, PATH, NAME
     try:
         package_name = URL.split('/')[-1]
-        p = Popen(['npm','v',package_name,'dist.tarball'], stdout=PIPE, stderr=PIPE, shell=True)
+
+        p = Popen(['npm','v',package_name,'dist.tarball'], stdout=PIPE, stderr=PIPE)
         tarballURL = p.stdout.read().strip().decode()
         name = tarballURL.split('/')[-1]
+
         if os.path.isfile(PATH / name):
             os.remove(PATH / name)
         if os.path.exists(PATH / name[:-4]):
@@ -43,6 +45,7 @@ def analyze(name):
     try:
         packages, requirements = find_all(PATH / name)
 
+        packageFlag = True
         output = {}
         for path in packages:
             with open(path, 'r') as f:
@@ -54,11 +57,13 @@ def analyze(name):
                     d["current"]=module[1]
                     d["latest"]=module[2]
                     v[module[0]]=d
+                if len(v) > 1:
+                    packageFlag = False
                 output["package"]=v
     finally:
         if os.path.exists(PATH / name):
             shutil.rmtree(PATH / name)
-        return output
+        return output, packageFlag
 
 def main(url):
     global URL
@@ -66,12 +71,14 @@ def main(url):
     REPORT = {}
     try:
         name = download_package()
-        REPORT = analyze(name)
+        REPORT, flag = analyze(name)
     except:
         REPORT = {}
         REPORT['error'] = ""
     finally:
         if "error" in REPORT.keys():
             return False
+        if flag:
+            REPORT = {"error":"No vulnerable dependencies found"}
         print(json.dumps(REPORT, indent=4))
         return True

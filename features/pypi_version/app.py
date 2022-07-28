@@ -27,6 +27,7 @@ def main(url):
     URL = url
     REPO_NAME = URL.split('/')[-1]
     final=dict()
+    flag = True
     try:
         final["data"]=list()
         vulnerable=check_pypi(REPO_NAME)
@@ -37,6 +38,7 @@ def main(url):
             parsed=json.loads(output)
             params={}
             if(len(parsed["vulnerabilities"])>0):
+                flag = False
                 params["vulnerability_id"]=parsed["vulnerabilities"][0]["vulnerability_id"]
                 params["package_name"]=parsed["vulnerabilities"][0]["package_name"]
                 params["analyzed_version"]=parsed["vulnerabilities"][0]["analyzed_version"]
@@ -49,5 +51,7 @@ def main(url):
     finally:
         if "error" in final.keys():
             return False
+        if flag:
+            final = {"error":"No vulnerable dependencies found"}
         print(json.dumps(final, indent=4))
         return True

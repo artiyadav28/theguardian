@@ -2,16 +2,18 @@ import sys
 import validators
 import requests
 import json
-from features.github_version import app as gv
 from features.legit_percent import app as lp
 from features.sensitive_info import app as si
+from features.github_version import app as gv
+from features.npm_version import app as nv
+from features.pypi_version import app as pv
 
 OPERATION = sys.argv[1].strip()
 URL = sys.argv[2].strip()
 if URL[-1] == '/':
     URL = URL[:-1]
 
-AVAILABLE_OPERATIONS = ["legit_percent","sensitive_info","version_checker","pypi_vuln","npm_vuln"]
+AVAILABLE_OPERATIONS = ["legit_percent","sensitive_info","github_version","pypi_version","npm_version"]
 ERROR = {}
 INVALID_URL = "Invalid URL. Please check the URL and try again."
 SOMETHING_WRONG = "Something went wrong. Please try again."
@@ -61,7 +63,7 @@ def main():
     global OPERATION, AVAILABLE_OPERATIONS, ERROR, URL
     if OPERATION not in AVAILABLE_OPERATIONS:
         return False
-    if OPERATION == "version_checker":
+    if OPERATION == "github_version":
         if not isGitHubURL():
             ERROR['error'] = INVALID_URL
             return False
@@ -82,7 +84,22 @@ def main():
         if not si.main(URL):
             ERROR['error'] = SOMETHING_WRONG
             return False
-    
+    elif OPERATION == "npm_version":
+        if not isNpmURL():
+            ERROR['error'] = INVALID_URL
+            return False
+        if not nv.main(URL):
+            ERROR['error'] = SOMETHING_WRONG
+            return False
+    elif OPERATION == "pypi_version":
+        if not isPyPiURL():
+            ERROR['error'] = INVALID_URL
+            return False
+        if not pv.main(URL):
+            ERROR['error'] = SOMETHING_WRONG
+            return False
+    else:
+        return False
     return True
 
 if __name__ == "__main__":

@@ -31,7 +31,6 @@ def main(url):
     global URL
     URL = url
     try:
-        shutil.rmtree(PATH)
         clone()
         output=dict()
         packages, requirements = find_all()

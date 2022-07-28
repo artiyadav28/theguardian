@@ -81,7 +81,7 @@ const LegitPercent = ({
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#e47a98", color: "black" }}
+            style={{ background: "#C3AED6", color: "black" }}
           >
             Go
           </Button>

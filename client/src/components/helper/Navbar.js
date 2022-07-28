@@ -124,11 +124,11 @@ function Navbar() {
             </SidebarHeader>
             <SidebarContent>
           <Menu iconShape='square' style={{color:"black"}} className="styled-text" >
-              <MenuItem active={path.includes('/dashboard')} style={{backgroundColor:(!path.includes('/dashboard')?"white":"#C499BA")}} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
-              <MenuItem active={path.includes('/versionChecker')} style={{backgroundColor:(!path.includes('/versionChecker')?"white":"#C499BA")}}  icon={<FaList />}>Version Checker <Link to="/versionChecker"/></MenuItem>
-              <MenuItem active={path.includes('/legitPercent')} style={{backgroundColor:(!path.includes('/legitPercent')?"white":"#C499BA")}} icon={<FaRegHeart />}>Legit Percent <Link to="/legitPercent"/></MenuItem>
-              <MenuItem active={path.includes('/sensitiveinfo')} style={{backgroundColor:(!path.includes('/sensitiveinfo')?"white":"#C499BA")}} icon={<RiPencilLine />}>Sensitive Info<Link to="/sensitiveinfo"/></MenuItem>
-              <MenuItem active={path.includes('/pypi')} style={{backgroundColor:(!path.includes('/pypi')?"white":"#C499BA")}} icon={<BiCog />}>Pypi<Link to="/pypi"/></MenuItem>
+              <MenuItem active={path.includes('/dashboard')} style={{backgroundColor:(!path.includes('/dashboard')?"white":"#C3AED6")}} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
+              <MenuItem active={path.includes('/versionChecker')} style={{backgroundColor:(!path.includes('/versionChecker')?"white":"#C3AED6")}}  icon={<FaList />}>Version Checker <Link to="/versionChecker"/></MenuItem>
+              <MenuItem active={path.includes('/legitPercent')} style={{backgroundColor:(!path.includes('/legitPercent')?"white":"#C3AED6")}} icon={<FaRegHeart />}>Legit Percent <Link to="/legitPercent"/></MenuItem>
+              <MenuItem active={path.includes('/sensitiveinfo')} style={{backgroundColor:(!path.includes('/sensitiveinfo')?"white":"#C3AED6")}} icon={<RiPencilLine />}>Sensitive Info<Link to="/sensitiveinfo"/></MenuItem>
+              <MenuItem active={path.includes('/pypi')} style={{backgroundColor:(!path.includes('/pypi')?"white":"#C3AED6")}} icon={<BiCog />}>Pypi<Link to="/pypi"/></MenuItem>
           </Menu>
           </SidebarContent>
         </ProSidebar>

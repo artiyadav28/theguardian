@@ -8,19 +8,20 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { color } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const columns = [
   { id: 'vulnerability_id', label: 'vulnerability_id', minWidth: 170 },
   {
     id: 'package_name',
-    label: 'package_name',
+    label: 'Package Name',
     minWidth: 170,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'analyzed_version',
-    label: 'analyzed_version',
+    label: 'Analyzed Version',
     minWidth: 170,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
@@ -34,8 +35,8 @@ const columns = [
   },
   {
     id: 'more_info_url',
-    label: 'more_info_url',
-    minWidth: 170,
+    label: 'More Info Url',
+    minWidth: 200,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
@@ -82,9 +83,10 @@ export default function StickyHeadTable({rows}) {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number'
+                          {/* {column.format && typeof value === 'number'
                             ? column.format(value)
-                            : value} 
+                            : value}  */}
+                            {value? (column.id==="more_info_url"?<Link to={value}>{value}</Link>:value):"-"}
                         </TableCell>
                       );
                     })}

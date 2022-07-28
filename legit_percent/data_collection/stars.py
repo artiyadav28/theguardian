@@ -4,13 +4,12 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 
-from legit_percent.app import API_URL
-
 THREADS = 400
 LAST_PAGE = "In order to keep the API fast for everyone, pagination is limited for this resource."
 GITHUB_TOKEN = ""
 
 def getStarDate(START, END):
+    global API_URL, GITHUB_TOKEN, LAST_PAGE
     output = []
     for i in range(START, END):
         URL = API_URL + str(i)
@@ -26,7 +25,7 @@ def getStarDate(START, END):
     return output
 
 def fixStars(stars):
-    global API_URL
+    global API_URL, THREADS
     API_URL += f"/stargazers?per_page=100&page="
     
     pages = ceil(stars/100)
@@ -47,9 +46,9 @@ def fixStars(stars):
     unique_output = set(output)
     return len(unique_output)
 
-def getStars(REPO_INFO, TOKEN, url):
-    global API_URL = url
-    global GITHUB_TOKEN
+def getStars(REPO_INFO, TOKEN, api_url):
+    global API_URL, GITHUB_TOKEN
+    API_URL = api_url
     GITHUB_TOKEN = TOKEN
     s = REPO_INFO["stargazers_count"]
     return fixStars(s)

@@ -1,35 +1,18 @@
-import sys
 import requests
 from requests.auth import HTTPBasicAuth
 import json
 import pathlib
-from modules import check_legit
+from .modules import check_legit
+from .modules import rate_limit
 from math import ceil
-from modules import rate_limit
 from dotenv import dotenv_values
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
 ENV_DIR = BASE_DIR / ".env"
 config = dotenv_values(ENV_DIR)
 
-GITHUB_TOKEN = ""
-
-URL = sys.argv[1]
-if URL[-1] == '/':
-    URL = URL[:-1]
-if URL[-4:] == '.git':
-    URL = URL[:-4]
-try:
-    API_URL = f"https://api.github.com/repos/{URL.split('/')[-2]}/{URL.split('/')[-1]}"
-except:
-    error = {"error":"SOMETHING WENT WRONG"}
-    print(json.dumps(error))
-    exit(0)
 PAGE_LIMIT = 100
 REPO_INFO = {}
-
-DEBUG = 1
-ERROR_MESSAGE = "SOMETHING WENT WRONG, PLEASE TRY AGAIN."
 
 def init():
     global GITHUB_TOKEN
@@ -64,34 +47,25 @@ def fillRepoInfo():
     r = requests.get(API_URL, auth=HTTPBasicAuth("", GITHUB_TOKEN))
     REPO_INFO = json.loads(r.text)
 
-def main():
+def main(url):
+    global URL, API_URL, REPO_INFO, GITHUB_TOKEN
+    URL = url
+    API_URL = f"https://api.github.com/repos/{URL.split('/')[-2]}/{URL.split('/')[-1]}"
     REPORT = {}
     try:
         check, err = init()
         if not check:
-            if DEBUG:
-                if err == "NOTA":
-                    REPORT['error'] = "TOKEN LIMIT EXPIRED. PLEASE WAIT"
-                else:
-                    REPORT['error'] = f"SOMETHING WRONG WITH TOKEN: {err}"
-            else:
-                REPORT['error'] = ERROR_MESSAGE
-            return REPORT
+            raise Exception("Token Limit Expired")
         fillRepoInfo()
         if not chooseOptimal():
-            if DEBUG:
-                REPORT['error'] = "TOKEN LIMIT INSUFFICIENT"
-            else:
-                REPORT['error'] = ERROR_MESSAGE
-            return REPORT
-
-        REPORT = check_legit.generateReport(REPO_INFO, GITHUB_TOKEN)
-        return REPORT
+            raise Exception("No optimal token found")
+        REPORT = check_legit.generateReport(REPO_INFO, GITHUB_TOKEN, API_URL)
     except:
-        REPORT['error'] = ERROR_MESSAGE
-        return REPORT
-
-if __name__ == "__main__":
-    REPORT = main()
-    print(json.dumps(REPORT, indent=4))
+        REPORT = {}
+        REPORT['error'] = ""
+    finally:
+        if "error" in REPORT.keys():
+            return False
+        print(json.dumps(REPORT, indent=4))
+        return True
     

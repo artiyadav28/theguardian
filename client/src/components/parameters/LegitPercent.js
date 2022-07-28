@@ -19,7 +19,7 @@ import ProgressProvider from "./ProgressProvider";
 import "./style.css"
 const color = ["#B20600", "#E45826", "#F0A500", "#76BA99"];
 const LegitPercent = ({
-  repo: { loading, legit },
+  repo: { loading2, legit },
   getRepoLegitPercentDetails,
 }) => {
   const [repo, setRepo] = useState("");
@@ -86,7 +86,7 @@ const LegitPercent = ({
             Go
           </Button>
         </Box>
-        {loading ? (
+        {loading2 ? (
           <Spinner />
         ) : legit === null ? (
           <>

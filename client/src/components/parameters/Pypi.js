@@ -19,7 +19,7 @@ import ProgressProvider from "./ProgressProvider";
 import "./style.css";
 
 const Pypi = ({
-  repo: { loading, pypi},
+  repo: { loading4, pypi},
   getPypiDetails,
 }) => {
   const [repo, setRepo] = useState("");
@@ -70,7 +70,7 @@ const Pypi = ({
             Go
           </Button>
         </Box>
-        {loading ? (
+        {loading4 ? (
           <Spinner />
         ) : pypi=== null ? (
           <>

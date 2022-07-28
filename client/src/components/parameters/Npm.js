@@ -16,7 +16,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import StickyHeadTable from "./Table"
 import "./style.css"
-const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
+const Npm = ({ repo: { loading, npm }, getNpmDetails }) => {
   const [repo, setRepo] = useState("");
   const [packages, setPackages] =useState([]);
   const handleClick = () => {
@@ -69,7 +69,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
             Go
           </Button>
         </Box>
-        {loading5 ? (
+        {loading ? (
           <Spinner />
         ) : npm === null ? (
           <>

@@ -19,7 +19,7 @@ import ProgressProvider from "./ProgressProvider";
 import "./style.css";
 
 const SensitiveInfo = ({
-  repo: { loading3, sensitive },
+  repo: { loading, sensitive },
   getSensitiveInfoDetails,
 }) => {
   const [repo, setRepo] = useState("");
@@ -70,7 +70,7 @@ const SensitiveInfo = ({
             Go
           </Button>
         </Box>
-        {loading3 ? (
+        {loading ? (
           <Spinner />
         ) : sensitive === null ? (
           <>

@@ -16,7 +16,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import StickyHeadTable from "./Table"
 import "./style.css"
-const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => {
+const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
   const [repo, setRepo] = useState("");
   const [packages, setPackages] =useState([]);
   const [requirements, setRequirements] =useState([]);
@@ -84,7 +84,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
             Go
           </Button>
         </Box>
-        {loading1 ? (
+        {loading ? (
           <Spinner />
         ) : info === null ? (
           <>

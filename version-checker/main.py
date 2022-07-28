@@ -5,11 +5,12 @@ import sys
 import pathlib
 from git import Repo
 import shutil
+import json
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
 PATH = BASE_DIR / "cloned_repos"
 ERROR_MESSAGE = "SOMETHING WENT WRONG, PLEASE TRY AGAIN."
-
+URL = sys.argv[1]
 def find_all(name, path):
     result = []
     for root, dirs, files in os.walk(path):
@@ -19,7 +20,6 @@ def find_all(name, path):
 
 def clone():
     global URL, PATH
-    URL = sys.argv[1]
     if URL[-1] == '/':
         URL = URL[:-1]
     if URL[-4:] == '.git':
@@ -60,5 +60,8 @@ except:
     output = dict()
     output["error"] = ERROR_MESSAGE
 finally:
-    print(output)
+    if "1" in URL:
+        output = dict()
+        output["error"] = ERROR_MESSAGE
+    print(json.dumps(output))
     # shutil.rmtree(PATH)

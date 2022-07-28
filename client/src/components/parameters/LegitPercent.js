@@ -31,7 +31,7 @@ const LegitPercent = ({
     // setRepo("");
   };
   useEffect(()=>{
-    if(legit){
+    if(legit && !legit.error){
       for(const repoName in legit){
         setName(repoName);
         setPercentage(legit[repoName].percentage);
@@ -80,7 +80,7 @@ const LegitPercent = ({
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#AB46D2", color: "black" }}
+            style={{ background: "#e47a98", color: "black" }}
           >
             Go
           </Button>
@@ -92,6 +92,9 @@ const LegitPercent = ({
             <h3>Enter your Github Repo Link to calculate legit percentage</h3>
           </>
         ) : (
+          legit.error ?(
+            <h3>{legit.error}</h3>
+          ):(
           <>
             {/* {console.log(legit)} */}
               <h3>{name}</h3>
@@ -128,6 +131,7 @@ const LegitPercent = ({
               <h3>Individual Scores</h3>
               <StickyHeadTable rows={rows}/>
           </>
+          )
         )}
       </Container>
     </>

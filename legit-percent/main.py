@@ -19,7 +19,12 @@ if URL[-1] == '/':
     URL = URL[:-1]
 if URL[-4:] == '.git':
     URL = URL[:-4]
-API_URL = f"https://api.github.com/repos/{URL.split('/')[-2]}/{URL.split('/')[-1]}"
+try:
+    API_URL = f"https://api.github.com/repos/{URL.split('/')[-2]}/{URL.split('/')[-1]}"
+except:
+    error = {"error":"SOMETHING WENT WRONG"}
+    print(json.dumps(error))
+    exit(0)
 PAGE_LIMIT = 100
 REPO_INFO = {}
 

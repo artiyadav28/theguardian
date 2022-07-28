@@ -10,8 +10,8 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{background:"white",color:"black"}}>
-        <Toolbar variant="dense" sx={{ mr: 2 }}>
-          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+        <Toolbar variant="dense">
+          <IconButton edge="start" color="inherit" aria-label="menu">
             <VerifiedUserIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" component="div">

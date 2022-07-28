@@ -63,7 +63,7 @@ const Header = ({repo:{loading,info}}) => {
               <MenuItem active={path.includes('/dashboard')} style={{color:(!path.includes('/dashboard')?"black":"#AB46D2")}} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
               <MenuItem active={path.includes('/versionChecker')} style={{color:(!path.includes('/versionChecker')?"black":"#AB46D2")}}  icon={<FaList />}>Version Checker <Link to="/versionChecker"/></MenuItem>
               <MenuItem active={path.includes('/legitPercent')} style={{color:(!path.includes('/legitPercent')?"black":"#AB46D2")}} icon={<FaRegHeart />}>Legit Percent <Link to="/legitPercent"/></MenuItem>
-              <MenuItem active={path.includes('/parameter3')} style={{color:(!path.includes('/parameter3')?"black":"#AB46D2")}} icon={<RiPencilLine />}>Parameter 3 <Link to="/parameter3"/></MenuItem>
+              <MenuItem active={path.includes('/sensitiveinfo')} style={{color:(!path.includes('/sensitiveinfo')?"black":"#AB46D2")}} icon={<RiPencilLine />}>Sensitive Info<Link to="/sensitiveinfo"/></MenuItem>
               <MenuItem active={path.includes('/parameter4')} style={{color:(!path.includes('/parameter4')?"black":"#AB46D2")}} icon={<BiCog />}>Parameter 4 <Link to="/parameter4"/></MenuItem>
             </Menu>
           </SidebarContent>

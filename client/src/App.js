@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import Home from './components/Home';
 import VersionChecker from './components/parameters/VersionChecker';
 import LegitPercent from './components/parameters/LegitPercent';
+import SensitiveInfo from './components/parameters/SensitiveInfo';
 const App=()=> {
 
   return (
@@ -34,15 +35,16 @@ const App=()=> {
     <Router>
     <Navbar />
       <div style={{display:"flex",flexDirection:"row"}}>
-        <div style={{width:"20%"}}>
+        <div style={{width:"25%"}}>
           <Header />
         </div>
-        <div style={{width:"80%"}}>
+        <div style={{width:"75%"}}>
           <Routes>
             <Route path={'/'} element={<Home />} />
             <Route path={'/dashboard'} element={<Dashboard />} />
             <Route path={'/versionChecker'} element={<VersionChecker />} />
             <Route path={'/legitPercent'} element={<LegitPercent />} />
+            <Route path={'/sensitiveinfo'} element={<SensitiveInfo />} />
           </Routes>
         </div>
       </div>

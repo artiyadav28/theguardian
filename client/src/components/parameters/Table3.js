@@ -10,30 +10,18 @@ import TableRow from '@mui/material/TableRow';
 import { color } from '@mui/system';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
+  { id: 'name', label: 'File Name', minWidth: 170 },
 //   { id: 'current', label: 'Current', minWidth: 100 },
   {
-    id: 'current',
-    label: 'Current',
+    id: 'sensitive',
+    label: 'Sensitive Info',
     minWidth: 170,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'latest',
-    label: 'Latest',
-    minWidth: 170,
-    align: 'right',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
+  }
 ];
 
 
-const colors={
-    "name":"black",
-    "current":"red",
-    "latest":"green"
-}
 export default function StickyHeadTable({rows}) {
     console.log(rows);
   const [page, setPage] = React.useState(0);
@@ -57,7 +45,7 @@ export default function StickyHeadTable({rows}) {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth ,fontWeight:"bold"}}
+                  style={{ minWidth: column.minWidth ,fontWeight:"bold" }}
                 >
                   {column.label}
                 </TableCell>
@@ -73,7 +61,7 @@ export default function StickyHeadTable({rows}) {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align} style={{color:colors[column.id]}}>
+                        <TableCell key={column.id} align={column.align}>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value} 

@@ -25,7 +25,7 @@ const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
     // setRepo("");
   };
   useEffect(()=>{
-    if(info && info.package){
+    if(info && !info.error && info.package){
       const arr=[];
       for(const property in info.package){
         const obj={
@@ -39,7 +39,7 @@ const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
       }
       setPackages([...arr]);
     }
-    if(info && info.requirements){
+    if(info && !info.error && info.requirements){
       const arr=[];
       for(const property in info.requirements){
         const obj={
@@ -78,7 +78,7 @@ const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#AB46D2", color: "black" }}
+            style={{ background: "#e47a98", color: "black" }}
           >
             Go
           </Button>
@@ -90,17 +90,21 @@ const VersionChecker = ({ repo: { loading, info }, getRepoVersionDetails }) => {
             <h3>Enter your Github Repo Link to check for version details</h3>
           </>
         ) : (
+          info.error?(
+            <h3>{info.error}</h3>
+          ):(
           <>
             {info  && info.package && <>
-            <h1>package.json:</h1>
+            <h4 className="heading">package.json:</h4>
             <StickyHeadTable rows={packages}/>
             </>}
             {info && info.requirements && <>
-            <h1>requirements.txt:</h1>
+            <h4 className="heading">requirements.txt:</h4>
             <StickyHeadTable rows={requirements}/>
             </>}
 
           </>
+          )
         )}
       </Container>
     </>

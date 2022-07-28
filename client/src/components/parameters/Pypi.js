@@ -72,13 +72,13 @@ const Pypi = ({
         </Box>
         {loading ? (
           <Spinner />
-        ) : Pypi=== null ? (
+        ) : pypi=== null ? (
           <>
-            <h3>Enter your Github Repo Link to check for Pypiinfo in your repo</h3>
+            <h3>Enter your Github Repo Link to check for Pypi info in your repo</h3>
           </>
         ) : (
-            Pypi.error? (
-                <h3>{Pypi.error}</h3>
+            pypi.error? (
+                <h3>{pypi.error}</h3>
             ):(
                 <>
                 <h3>Here is your result</h3>

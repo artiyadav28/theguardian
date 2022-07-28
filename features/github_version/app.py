@@ -24,6 +24,8 @@ def find_all(path):
 def clone():
     global URL, PATH
     PATH = PATH / URL.split('/')[-1]
+    if os.path.exists(PATH):
+        shutil.rmtree(PATH)
     Repo.clone_from(URL, PATH)
 
 def main(url):
@@ -61,7 +63,8 @@ def main(url):
         output = dict()
         output["error"] = ""
     finally:
-        shutil.rmtree(PATH)
+        if os.path.exists(PATH):
+            shutil.rmtree(PATH)
         if "error" in output.keys():
             return False
         print(json.dumps(output, indent=4))

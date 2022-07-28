@@ -86,7 +86,7 @@ export default function StickyHeadTable({rows}) {
                           {/* {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}  */}
-                            {value? (column.id==="more_info_url"?<Link to={value}>{value}</Link>:value):"-"}
+                            {value? (column.id==="more_info_url"?<a href={value} target="_blank">{value}</a>:value):"-"}
                         </TableCell>
                       );
                     })}

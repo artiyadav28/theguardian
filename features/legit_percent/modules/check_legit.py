@@ -1,4 +1,4 @@
-from data_collection import stars, forks, watchers, issues, percentage
+from ..data_collection import stars, forks, watchers, percentage
 
 def percentLegitness(REPORT):
     i,j,k,percent = percentage.getPercentage(REPORT)
@@ -8,13 +8,13 @@ def percentLegitness(REPORT):
     percent = round(percent, 2)
     return (i, j, k, percent)
 
-def generateReport(REPO_INFO, GITHUB_TOKEN):
+def generateReport(REPO_INFO, GITHUB_TOKEN, api_url):
     DATA = {}
     
     if forks.isForked(REPO_INFO):
         return {'message':"This is a forked repo. Please enter the original repo URL."}
     
-    DATA["stars"] = stars.getStars(REPO_INFO, GITHUB_TOKEN)
+    DATA["stars"] = stars.getStars(REPO_INFO, GITHUB_TOKEN, api_url)
     DATA["watchers"] = watchers.getWatchers(REPO_INFO)
     DATA["forks"] = forks.getForks(REPO_INFO)
     i,j,k,percent = percentLegitness(DATA)

@@ -1,15 +1,7 @@
 from subprocess import Popen, PIPE
 import json
-import sys
 
-URL = sys.argv[1]
-if URL[-1] == '/':
-    URL = URL[:-1]
-if URL[-4:] == '.git':
-    URL = URL[:-4]
-
-ERROR_MESSAGE = "SOMETHING WENT WRONG, PLEASE TRY AGAIN."
-
+DEBUG = 1
 DEBUG_REPORT = {
     "leaks": [
         [
@@ -147,21 +139,25 @@ DEBUG_REPORT = {
     ]
 }
 
-if __name__ == "__main__":
+def main(url):
+    global URL, DEBUG_REPORT, DEBUG
+    URL = url
     REPORT = {}
-    # try:
-    #     p = Popen(["gittyleaks","-b","-d","-f","-l",URL], stdout=PIPE, stderr=PIPE)
-    #     output = p.stdout.read().decode().strip().split('\n')[1:]
-    #     LEAKS = [[x[0].strip(), x[1].strip()] for x in (line.split(':', 1) for line in output)]
-    #     REPORT = {
-    #         "leaks": LEAKS
-    #     }
-    # except:
-    #     REPORT['error'] = ERROR_MESSAGE
-    # finally:
-    #     print(json.dumps(REPORT, indent=4))
-    if '1' in URL:
-        REPORT = DEBUG_REPORT
-    else:
-        REPORT['error'] = ERROR_MESSAGE
-    print(json.dumps(REPORT, indent=4))
+    try:
+        p = Popen(["gittyleaks","-b","-d","-f","-l",URL], stdout=PIPE, stderr=PIPE)
+        output = p.stdout.read().decode().strip().split('\n')[1:]
+        LEAKS = [[x[0].strip(), x[1].strip()] for x in (line.split(':', 1) for line in output)]
+        REPORT = {
+            "leaks": LEAKS
+        }
+    except:
+        REPORT = {}
+        if DEBUG == 1:
+            REPORT = DEBUG_REPORT
+        else:
+            REPORT['error'] = ""
+    finally:
+        if "error" in REPORT.keys():
+            return False
+        print(json.dumps(REPORT, indent=4))
+        return True

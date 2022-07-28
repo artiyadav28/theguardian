@@ -1,2 +1,8 @@
 export const SEARCH_INFO="SEARCH_INFO";
 export const SET_INFO="SET_INFO";
+export const SEARCH_LEGIT="SEARCH_LEGIT";
+export const SET_LEGIT="SET_LEGIT";
+export const SEARCH_SENSITIVE="SEARCH_SENSITIVE";
+export const SET_SENSITIVE="SET_SENSITIVE";
+export const SEARCH_PYPI="SEARCH_PYPI";
+export const SET_PYPI="SET_PYPI";

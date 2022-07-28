@@ -1,0 +1,24 @@
+.styled_container{
+    background-color:white;
+    padding:2rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: -1px 1px 61px -50px rgba(0,0,0,1);
+    -moz-box-shadow: -1px 1px 61px -50px rgba(0,0,0,1);
+    box-shadow: -1px 1px 61px -50px rgba(0,0,0,1);
+}
+.heading{
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 0;
+    display: inline-block;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    border-bottom: 0.3px solid rgb(223, 223, 223);
+}
+.styled-text{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:black;
+}

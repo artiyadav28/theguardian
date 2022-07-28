@@ -1,6 +1,6 @@
 #header {
     /* position: absolute; */
-    width: 220px;
+    /* width: 230px; */
   }
   #header .pro-sidebar {
     height: 100vh;
@@ -28,6 +28,7 @@
   #header .pro-sidebar-inner {
     background-color: white;
     box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0.01px 0.01px 3px 2px rgba(0, 0, 0, 0.15); */
   }
   #header .pro-sidebar-inner .pro-sidebar-layout {
     overflow-y: hidden;
@@ -47,7 +48,7 @@
     font-weight: bold;
   }
   #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
-    background-color: #fbf4cd;
+    background-color: #F3ECF4;
     color: #000;
     border-radius: 3px;
   }
@@ -55,7 +56,9 @@
     color: #000;
   }
   #header .pro-sidebar-inner .pro-sidebar-layout .active {
-    background-image: linear-gradient(0deg, #fece00 0%, #ffe172 100%);
+    background-color: #e47a98;
+    /* background-image: linear-gradient(0deg, #fece00 0%, #ffe172 100%); */
+    /* color:#AB46D2; */
   }
   #header .logo {
     padding: 20px;

@@ -3,7 +3,8 @@ from math import ceil
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-from main import API_URL
+
+from legit_percent.app import API_URL
 
 THREADS = 400
 LAST_PAGE = "In order to keep the API fast for everyone, pagination is limited for this resource."
@@ -46,7 +47,8 @@ def fixStars(stars):
     unique_output = set(output)
     return len(unique_output)
 
-def getStars(REPO_INFO, TOKEN):
+def getStars(REPO_INFO, TOKEN, url):
+    global API_URL = url
     global GITHUB_TOKEN
     GITHUB_TOKEN = TOKEN
     s = REPO_INFO["stargazers_count"]

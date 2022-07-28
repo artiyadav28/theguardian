@@ -11,11 +11,10 @@ PATH = BASE_DIR / "cloned_repos"
 if not os.path.exists(PATH):
     os.mkdir(PATH)
 
-def find_all():
-    global PATH
+def find_all(path):
     packages = []
     requirements = []
-    for root, dirs, files in os.walk(PATH):
+    for root, dirs, files in os.walk(path):
         if "requirements.txt" in files:
             requirements.append(os.path.join(root, "requirements.txt"))
         if "package.json" in files:
@@ -33,7 +32,7 @@ def main(url):
     try:
         clone()
         output=dict()
-        packages, requirements = find_all()
+        packages, requirements = find_all(PATH)
         
         for path in packages:
             with open(path,'r') as f:

@@ -13,6 +13,7 @@ import VersionChecker from './components/parameters/VersionChecker';
 import LegitPercent from './components/parameters/LegitPercent';
 import SensitiveInfo from './components/parameters/SensitiveInfo';
 import Pypi from './components/parameters/Pypi';
+import Npm from './components/parameters/Npm';
 const App=()=> {
 
   return (
@@ -26,6 +27,7 @@ const App=()=> {
           <Route path={'/legitPercent'} element={<LegitPercent />} />
           <Route path={'/sensitiveinfo'} element={<SensitiveInfo />} />
           <Route path={'/pypi'} element={<Pypi />} />
+          <Route path={'/npm'} element={<Npm />} />
       </Routes>
     </Router>
     </Provider>

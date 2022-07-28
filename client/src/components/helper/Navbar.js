@@ -129,6 +129,7 @@ function Navbar() {
               <MenuItem active={path.includes('/legitPercent')} style={{backgroundColor:(!path.includes('/legitPercent')?"white":"#C3AED6")}} icon={<FaRegHeart />}>Legit Percent <Link to="/legitPercent"/></MenuItem>
               <MenuItem active={path.includes('/sensitiveinfo')} style={{backgroundColor:(!path.includes('/sensitiveinfo')?"white":"#C3AED6")}} icon={<RiPencilLine />}>Sensitive Info<Link to="/sensitiveinfo"/></MenuItem>
               <MenuItem active={path.includes('/pypi')} style={{backgroundColor:(!path.includes('/pypi')?"white":"#C3AED6")}} icon={<BiCog />}>Pypi<Link to="/pypi"/></MenuItem>
+              <MenuItem active={path.includes('/npm')} style={{backgroundColor:(!path.includes('/npm')?"white":"#C3AED6")}} icon={<BiCog />}>Npm<Link to="/npm"/></MenuItem>
           </Menu>
           </SidebarContent>
         </ProSidebar>

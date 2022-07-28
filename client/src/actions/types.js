@@ -6,3 +6,5 @@ export const SEARCH_SENSITIVE="SEARCH_SENSITIVE";
 export const SET_SENSITIVE="SET_SENSITIVE";
 export const SEARCH_PYPI="SEARCH_PYPI";
 export const SET_PYPI="SET_PYPI";
+export const SEARCH_NPM="SEARCH_NPM";
+export const SET_NPM="SET_NPM";

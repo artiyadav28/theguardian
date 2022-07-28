@@ -62,3 +62,21 @@ export const getPypiDetails = (url) => async (dispatch) => {
           console.log(e)
      }
 };
+export const getNpmDetails = (url) => async (dispatch) => {
+    try{
+        dispatch({
+         type: 'SEARCH_NPM',
+        })
+
+         const res = await axios.post('/npm',{url:url})
+        //  const result=res.data.replace(/'/g, '"')
+        //  const info=JSON.parse(result);
+         console.log(res.data);
+         dispatch({
+             type: 'SET_NPM',
+             payload: res.data
+         })
+     }catch(e){
+          console.log(e)
+     }
+};

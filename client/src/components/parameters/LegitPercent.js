@@ -60,6 +60,7 @@ const LegitPercent = ({
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
+        <h2 className="styled-text">Legit Percent</h2>
         <Box
           className="styled_container"
           // style={{backgroundColor:"white",padding:"2rem", borderRadius:"0.7rem"}}

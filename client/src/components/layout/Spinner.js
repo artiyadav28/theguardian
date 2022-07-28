@@ -20,7 +20,7 @@ export default function CircularColor() {
   return (
     <>
     <Stack sx={{ color: 'grey.500', mt:5 }} spacing={2} direction="row">
-      <CircularProgress color="secondary" />
+      <CircularProgress style={{color:'#e47a98'}} />
     </Stack>
     </>
   );

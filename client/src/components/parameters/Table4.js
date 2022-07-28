@@ -10,15 +10,35 @@ import TableRow from '@mui/material/TableRow';
 import { color } from '@mui/system';
 
 const columns = [
-  { id: 'name', label: 'File Name', minWidth: 170 },
-//   { id: 'current', label: 'Current', minWidth: 100 },
+  { id: 'vulnerability_id', label: 'vulnerability_id', minWidth: 170 },
   {
-    id: 'sensitive',
-    label: 'Sensitive Info',
+    id: 'package_name',
+    label: 'package_name',
     minWidth: 170,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
-  }
+  },
+  {
+    id: 'analyzed_version',
+    label: 'analyzed_version',
+    minWidth: 170,
+    align: 'right',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'CVE',
+    label: 'CVE',
+    minWidth: 170,
+    align: 'right',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'more_info_url',
+    label: 'more_info_url',
+    minWidth: 170,
+    align: 'right',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
 ];
 
 

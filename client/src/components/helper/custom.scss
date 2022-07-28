@@ -1,4 +1,6 @@
 // Your variable overrides
-// $sidebar-bg-color: linear-gradient(150deg, #4341be, #23d1a8);
+$sidebar-bg-color: white;
 $sidebar-color: #ffffff !default;
+$icon-bg-color: #F3ECF4 !default;
+$highlight-color: #000000 !default;
 @import '~react-pro-sidebar/dist/scss/styles.scss';

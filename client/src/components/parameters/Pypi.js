@@ -11,40 +11,40 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
-import { getSensitiveInfoDetails } from "../../actions/repo";
+import { getPypiDetails } from "../../actions/repo";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import StickyHeadTable from "./Table3";
+import StickyHeadTable from "./Table4";
 import ProgressProvider from "./ProgressProvider";
 import "./style.css";
 
-const SensitiveInfo = ({
-  repo: { loading, sensitive },
-  getSensitiveInfoDetails,
+const Pypi = ({
+  repo: { loading, pypi},
+  getPypiDetails,
 }) => {
   const [repo, setRepo] = useState("");
   const [rows, setRows] = useState([]);
   const handleClick = () => {
-    getSensitiveInfoDetails(repo);
+    getPypiDetails(repo);
   };
   useEffect(() => {
-    if (sensitive && sensitive.leaks) {
-        const arr=[];
-        sensitive.leaks.forEach(x=>{
-            const obj={
-                name:x[0],
-                sensitive:x[1]
-            }
-            arr.push(obj);
-        })
-        setRows(arr);
+    if (pypi&& pypi.data) {
+        // const arr=[];
+        // Pypileaks.forEach(x=>{
+        //     const obj={
+        //         name:x[0],
+        //         Pypix[1]
+        //     }
+        //     arr.push(obj);
+        // })
+        setRows(pypi.data);
     }
-  }, [sensitive]);
+  }, [pypi]);
   return (
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
-        <h2 className="styled-text">Sensitive Info</h2>
+        <h2 className="styled-text">Pypi Info</h2>
         <Box
           className='styled_container'
           // style={{backgroundColor:"white",padding:"2rem", borderRadius:"0.7rem"}}
@@ -72,13 +72,13 @@ const SensitiveInfo = ({
         </Box>
         {loading ? (
           <Spinner />
-        ) : sensitive === null ? (
+        ) : Pypi=== null ? (
           <>
-            <h3>Enter your Github Repo Link to check for sensitive info in your repo</h3>
+            <h3>Enter your Github Repo Link to check for Pypiinfo in your repo</h3>
           </>
         ) : (
-            sensitive.error? (
-                <h3>{sensitive.error}</h3>
+            Pypi.error? (
+                <h3>{Pypi.error}</h3>
             ):(
                 <>
                 <h3>Here is your result</h3>
@@ -91,15 +91,15 @@ const SensitiveInfo = ({
   );
 };
 
-SensitiveInfo.protoTypes = {
+Pypi.protoTypes = {
   repo: PropTypes.object.isRequired,
-  getSensitiveInfoDetails: PropTypes.func.isRequired,
+  getPypiDetails: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   repo: state.repo,
 });
 
-export default connect(mapStateToProps, { getSensitiveInfoDetails })(
-  SensitiveInfo
+export default connect(mapStateToProps, { getPypiDetails })(
+  Pypi
 );

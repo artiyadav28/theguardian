@@ -11,11 +11,10 @@ PATH = BASE_DIR / "cloned_repos"
 if not os.path.exists(PATH):
     os.mkdir(PATH)
 
-def find_all():
-    global PATH
+def find_all(path):
     packages = []
     requirements = []
-    for root, dirs, files in os.walk(PATH):
+    for root, dirs, files in os.walk(path):
         if "requirements.txt" in files:
             requirements.append(os.path.join(root, "requirements.txt"))
         if "package.json" in files:
@@ -25,6 +24,8 @@ def find_all():
 def clone():
     global URL, PATH
     PATH = PATH / URL.split('/')[-1]
+    if os.path.exists(PATH):
+        shutil.rmtree(PATH)
     Repo.clone_from(URL, PATH)
 
 def main(url):
@@ -33,7 +34,7 @@ def main(url):
     try:
         clone()
         output=dict()
-        packages, requirements = find_all()
+        packages, requirements = find_all(PATH)
         
         for path in packages:
             with open(path,'r') as f:
@@ -62,7 +63,8 @@ def main(url):
         output = dict()
         output["error"] = ""
     finally:
-        shutil.rmtree(PATH)
+        if os.path.exists(PATH):
+            shutil.rmtree(PATH)
         if "error" in output.keys():
             return False
         print(json.dumps(output, indent=4))

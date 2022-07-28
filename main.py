@@ -2,9 +2,9 @@ import sys
 import validators
 import requests
 import json
-from github_version import app as gv
-from legit_percent import app as lp
-from sensitive_info import app as si
+from features.github_version import app as gv
+from features.legit_percent import app as lp
+from features.sensitive_info import app as si
 
 OPERATION = sys.argv[1].strip()
 URL = sys.argv[2].strip()

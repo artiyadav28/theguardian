@@ -14,10 +14,7 @@ def main(url):
         }
     except:
         REPORT = {}
-        if DEBUG == 1:
-            REPORT = DEBUG_REPORT
-        else:
-            REPORT['error'] = ""
+        REPORT['error'] = ""
     finally:
         if "error" in REPORT.keys():
             return False

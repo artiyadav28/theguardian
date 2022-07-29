@@ -1,0 +1,757 @@
+{
+    "https://github.com/rdpeng/RepData_PeerAssessment1": {
+        "stars": 94,
+        "watchers": 94,
+        "forks": 36874
+    },
+    "https://github.com/vinta/awesome-python": {
+        "stars": 39982,
+        "watchers": 134774,
+        "forks": 21566
+    },
+    "https://github.com/microsoft/vscode": {
+        "stars": 39790,
+        "watchers": 134475,
+        "forks": 22959
+    },
+    "https://github.com/jlevy/the-art-of-command-line": {
+        "stars": 39730,
+        "watchers": 108200,
+        "forks": 11497
+    },
+    "https://github.com/public-apis/public-apis": {
+        "stars": 39921,
+        "watchers": 201866,
+        "forks": 23148
+    },
+    "https://github.com/kamranahmedse/developer-roadmap": {
+        "stars": 39902,
+        "watchers": 202575,
+        "forks": 28868
+    },
+    "https://github.com/rdpeng/ProgrammingAssignment2": {
+        "stars": 742,
+        "watchers": 742,
+        "forks": 140926
+    },
+    "https://github.com/avelino/awesome-go": {
+        "stars": 39987,
+        "watchers": 84390,
+        "forks": 10045
+    },
+    "https://github.com/gothinkster/realworld": {
+        "stars": 39965,
+        "watchers": 67400,
+        "forks": 6266
+    },
+    "https://github.com/tastejs/todomvc": {
+        "stars": 24636,
+        "watchers": 27873,
+        "forks": 13946
+    },
+    "https://github.com/typicode/json-server": {
+        "stars": 39977,
+        "watchers": 62337,
+        "forks": 6138
+    },
+    "https://github.com/apache/spark": {
+        "stars": 33459,
+        "watchers": 33463,
+        "forks": 25886
+    },
+    "https://github.com/storybookjs/storybook": {
+        "stars": 39985,
+        "watchers": 72930,
+        "forks": 7542
+    },
+    "https://github.com/bitcoin/bitcoin": {
+        "stars": 39202,
+        "watchers": 65385,
+        "forks": 32729
+    },
+    "https://github.com/gohugoio/hugo": {
+        "stars": 39994,
+        "watchers": 60371,
+        "forks": 6682
+    },
+    "https://github.com/git/git": {
+        "stars": 39860,
+        "watchers": 42896,
+        "forks": 23790
+    },
+    "https://github.com/qmk/qmk_firmware": {
+        "stars": 12813,
+        "watchers": 12814,
+        "forks": 27284
+    },
+    "https://github.com/atom/atom": {
+        "stars": 39936,
+        "watchers": 58315,
+        "forks": 17648
+    },
+    "https://github.com/SmartThingsCommunity/SmartThingsPublic": {
+        "stars": 2358,
+        "watchers": 2358,
+        "forks": 90203
+    },
+    "https://github.com/vuejs/awesome-vue": {
+        "stars": 39987,
+        "watchers": 65740,
+        "forks": 9066
+    },
+    "https://github.com/firstcontributions/first-contributions": {
+        "stars": 23970,
+        "watchers": 23982,
+        "forks": 46166
+    },
+    "https://github.com/pjreddie/darknet": {
+        "stars": 23006,
+        "watchers": 23008,
+        "forks": 20295
+    },
+    "https://github.com/facebook/react": {
+        "stars": 39980,
+        "watchers": 191752,
+        "forks": 39581
+    },
+    "https://github.com/30-seconds/30-seconds-of-code": {
+        "stars": 39901,
+        "watchers": 100432,
+        "forks": 10511
+    },
+    "https://github.com/shadowsocks/shadowsocks-windows": {
+        "stars": 39979,
+        "watchers": 54740,
+        "forks": 16320
+    },
+    "https://github.com/coolsnowwolf/lede": {
+        "stars": 22284,
+        "watchers": 22288,
+        "forks": 17689
+    },
+    "https://github.com/doocs/advanced-java": {
+        "stars": 39940,
+        "watchers": 64464,
+        "forks": 17318
+    },
+    "https://github.com/iluwatar/java-design-patterns": {
+        "stars": 39984,
+        "watchers": 75896,
+        "forks": 23574
+    },
+    "https://github.com/microsoft/TypeScript": {
+        "stars": 39987,
+        "watchers": 82573,
+        "forks": 10756
+    },
+    "https://github.com/moby/moby": {
+        "stars": 39982,
+        "watchers": 63582,
+        "forks": 18196
+    },
+    "https://github.com/laravel/laravel": {
+        "stars": 38533,
+        "watchers": 70381,
+        "forks": 22800
+    },
+    "https://github.com/helm/charts": {
+        "stars": 15434,
+        "watchers": 15436,
+        "forks": 17238
+    },
+    "https://github.com/facebook/react-native": {
+        "stars": 39644,
+        "watchers": 103892,
+        "forks": 22273
+    },
+    "https://github.com/jtleek/datasharing": {
+        "stars": 6126,
+        "watchers": 6126,
+        "forks": 241436
+    },
+    "https://github.com/spring-projects/spring-boot": {
+        "stars": 39991,
+        "watchers": 62307,
+        "forks": 36800
+    },
+    "https://github.com/barryclark/jekyll-now": {
+        "stars": 7790,
+        "watchers": 7791,
+        "forks": 34118
+    },
+    "https://github.com/spring-projects/spring-framework": {
+        "stars": 39563,
+        "watchers": 48530,
+        "forks": 34241
+    },
+    "https://github.com/apple/swift": {
+        "stars": 38310,
+        "watchers": 60149,
+        "forks": 9679
+    },
+    "https://github.com/ant-design/ant-design": {
+        "stars": 11022,
+        "watchers": 81166,
+        "forks": 35016
+    },
+    "https://github.com/netdata/netdata": {
+        "stars": 39899,
+        "watchers": 60017,
+        "forks": 5327
+    },
+    "https://github.com/jenkins-docs/simple-java-maven-app": {
+        "stars": 295,
+        "watchers": 295,
+        "forks": 19906
+    },
+    "https://github.com/chrislgarry/Apollo-11": {
+        "stars": 39508,
+        "watchers": 53169,
+        "forks": 6777
+    },
+    "https://github.com/getify/You-Dont-Know-JS": {
+        "stars": 39952,
+        "watchers": 156279,
+        "forks": 30758
+    },
+    "https://github.com/ytdl-org/youtube-dl": {
+        "stars": 39388,
+        "watchers": 111751,
+        "forks": 7966
+    },
+    "https://github.com/ossu/computer-science": {
+        "stars": 39927,
+        "watchers": 120249,
+        "forks": 16128
+    },
+    "https://github.com/nvbn/thefuck": {
+        "stars": 39920,
+        "watchers": 72406,
+        "forks": 3237
+    },
+    "https://github.com/python/cpython": {
+        "stars": 39929,
+        "watchers": 46338,
+        "forks": 24063
+    },
+    "https://github.com/Snailclimb/JavaGuide": {
+        "stars": 39942,
+        "watchers": 125026,
+        "forks": 42008
+    },
+    "https://github.com/odoo/odoo": {
+        "stars": 25687,
+        "watchers": 25688,
+        "forks": 16563
+    },
+    "https://github.com/aymericdamien/TensorFlow-Examples": {
+        "stars": 39951,
+        "watchers": 42081,
+        "forks": 15172
+    },
+    "https://github.com/octocat/Spoon-Knife": {
+        "stars": 10375,
+        "watchers": 11137,
+        "forks": 127893
+    },
+    "https://github.com/tonsky/FiraCode": {
+        "stars": 39989,
+        "watchers": 65065,
+        "forks": 2849
+    },
+    "https://github.com/github/gitignore": {
+        "stars": 35883,
+        "watchers": 136028,
+        "forks": 76268
+    },
+    "https://github.com/ansible/ansible": {
+        "stars": 39177,
+        "watchers": 53882,
+        "forks": 22156
+    },
+    "https://github.com/EbookFoundation/free-programming-books": {
+        "stars": 39898,
+        "watchers": 242329,
+        "forks": 49909
+    },
+    "https://github.com/kdn251/interviews": {
+        "stars": 39947,
+        "watchers": 57739,
+        "forks": 12217
+    },
+    "https://github.com/udacity/course-collaboration-travel-plans": {
+        "stars": 1091,
+        "watchers": 1091,
+        "forks": 16153
+    },
+    "https://github.com/twbs/bootstrap": {
+        "stars": 16736,
+        "watchers": 158624,
+        "forks": 76973
+    },
+    "https://github.com/microsoft/PowerToys": {
+        "stars": 39924,
+        "watchers": 75245,
+        "forks": 4274
+    },
+    "https://github.com/hakimel/reveal.js": {
+        "stars": 36471,
+        "watchers": 60679,
+        "forks": 16240
+    },
+    "https://github.com/django/django": {
+        "stars": 36156,
+        "watchers": 65227,
+        "forks": 27469
+    },
+    "https://github.com/puppeteer/puppeteer": {
+        "stars": 39781,
+        "watchers": 79078,
+        "forks": 8499
+    },
+    "https://github.com/macrozheng/mall": {
+        "stars": 39954,
+        "watchers": 59812,
+        "forks": 25166
+    },
+    "https://github.com/jackfrued/Python-100-Days": {
+        "stars": 39722,
+        "watchers": 120882,
+        "forks": 46015
+    },
+    "https://github.com/d3/d3": {
+        "stars": 34931,
+        "watchers": 101999,
+        "forks": 23150
+    },
+    "https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web": {
+        "stars": 103,
+        "watchers": 103,
+        "forks": 20735
+    },
+    "https://github.com/jwasham/coding-interview-university": {
+        "stars": 39729,
+        "watchers": 226462,
+        "forks": 60978
+    },
+    "https://github.com/freeCodeCamp/freeCodeCamp": {
+        "stars": 39916,
+        "watchers": 349771,
+        "forks": 29035
+    },
+    "https://github.com/mui-org/material-ui": {
+        "stars": 39975,
+        "watchers": 79980,
+        "forks": 27571
+    },
+    "https://github.com/CyC2018/CS-Notes": {
+        "stars": 39901,
+        "watchers": 154571,
+        "forks": 48512
+    },
+    "https://github.com/awesome-selfhosted/awesome-selfhosted": {
+        "stars": 39978,
+        "watchers": 96064,
+        "forks": 6114
+    },
+    "https://github.com/jlord/patchwork": {
+        "stars": 1036,
+        "watchers": 1036,
+        "forks": 36439
+    },
+    "https://github.com/angular/angular.js": {
+        "stars": 38635,
+        "watchers": 59414,
+        "forks": 28303
+    },
+    "https://github.com/keras-team/keras": {
+        "stars": 39985,
+        "watchers": 55714,
+        "forks": 19148
+    },
+    "https://github.com/home-assistant/core": {
+        "stars": 39984,
+        "watchers": 54098,
+        "forks": 18919
+    },
+    "https://github.com/golang/go": {
+        "stars": 39962,
+        "watchers": 101882,
+        "forks": 15145
+    },
+    "https://github.com/flutter/flutter": {
+        "stars": 39916,
+        "watchers": 142816,
+        "forks": 22761
+    },
+    "https://github.com/xingshaocheng/architect-awesome": {
+        "stars": 39838,
+        "watchers": 56509,
+        "forks": 17390
+    },
+    "https://github.com/dotnet/AspNetCore.Docs": {
+        "stars": 10710,
+        "watchers": 10711,
+        "forks": 24531
+    },
+    "https://github.com/gabrielecirulli/2048": {
+        "stars": 11319,
+        "watchers": 11320,
+        "forks": 16085
+    },
+    "https://github.com/MisterBooo/LeetCodeAnimation": {
+        "stars": 39892,
+        "watchers": 70947,
+        "forks": 13618
+    },
+    "https://github.com/sindresorhus/awesome": {
+        "stars": 39958,
+        "watchers": 211007,
+        "forks": 23852
+    },
+    "https://github.com/denoland/deno": {
+        "stars": 39671,
+        "watchers": 84169,
+        "forks": 4534
+    },
+    "https://github.com/CSSEGISandData/COVID-19": {
+        "stars": 28854,
+        "watchers": 28906,
+        "forks": 18633
+    },
+    "https://github.com/BVLC/caffe": {
+        "stars": 32758,
+        "watchers": 32759,
+        "forks": 19006
+    },
+    "https://github.com/nightscout/cgm-remote-monitor": {
+        "stars": 1856,
+        "watchers": 1856,
+        "forks": 65496
+    },
+    "https://github.com/github/docs": {
+        "stars": 10658,
+        "watchers": 10660,
+        "forks": 55916
+    },
+    "https://github.com/nodejs/node": {
+        "stars": 39949,
+        "watchers": 88958,
+        "forks": 23853
+    },
+    "https://github.com/shadowsocks/shadowsocks": {
+        "stars": 32847,
+        "watchers": 33210,
+        "forks": 19300
+    },
+    "https://github.com/facebook/create-react-app": {
+        "stars": 39942,
+        "watchers": 96103,
+        "forks": 24947
+    },
+    "https://github.com/RedHatTraining/DO180-apps": {
+        "stars": 197,
+        "watchers": 197,
+        "forks": 31867
+    },
+    "https://github.com/PanJiaChen/vue-element-admin": {
+        "stars": 39976,
+        "watchers": 77406,
+        "forks": 28173
+    },
+    "https://github.com/FortAwesome/Font-Awesome": {
+        "stars": 31800,
+        "watchers": 69726,
+        "forks": 12103
+    },
+    "https://github.com/tuvtran/project-based-learning": {
+        "stars": 39974,
+        "watchers": 73156,
+        "forks": 10757
+    },
+    "https://github.com/httpie/httpie": {
+        "stars": 22230,
+        "watchers": 22660,
+        "forks": 3690
+    },
+    "https://github.com/h5bp/html5-boilerplate": {
+        "stars": 36042,
+        "watchers": 53125,
+        "forks": 12067
+    },
+    "https://github.com/trekhleb/javascript-algorithms": {
+        "stars": 39723,
+        "watchers": 146347,
+        "forks": 24273
+    },
+    "https://github.com/apache/dubbo": {
+        "stars": 37541,
+        "watchers": 37642,
+        "forks": 25176
+    },
+    "https://github.com/LarryMad/recipes": {
+        "stars": 73,
+        "watchers": 73,
+        "forks": 20717
+    },
+    "https://github.com/ColorlibHQ/AdminLTE": {
+        "stars": 39993,
+        "watchers": 41220,
+        "forks": 17707
+    },
+    "https://github.com/axios/axios": {
+        "stars": 39983,
+        "watchers": 94710,
+        "forks": 9674
+    },
+    "https://github.com/academicpages/academicpages.github.io": {
+        "stars": 5952,
+        "watchers": 5952,
+        "forks": 21058
+    },
+    "https://github.com/goldbergyoni/nodebestpractices": {
+        "stars": 39950,
+        "watchers": 79332,
+        "forks": 8203
+    },
+    "https://github.com/opencv/opencv": {
+        "stars": 39716,
+        "watchers": 62803,
+        "forks": 52106
+    },
+    "https://github.com/ohmyzsh/ohmyzsh": {
+        "stars": 37668,
+        "watchers": 147841,
+        "forks": 24280
+    },
+    "https://github.com/pallets/flask": {
+        "stars": 38417,
+        "watchers": 59943,
+        "forks": 15161
+    },
+    "https://github.com/gatsbyjs/gatsby": {
+        "stars": 39982,
+        "watchers": 53259,
+        "forks": 10367
+    },
+    "https://github.com/Genymobile/scrcpy": {
+        "stars": 39970,
+        "watchers": 67964,
+        "forks": 7296
+    },
+    "https://github.com/mdn/learning-area": {
+        "stars": 5091,
+        "watchers": 5091,
+        "forks": 20392
+    },
+    "https://github.com/vercel/next.js": {
+        "stars": 39929,
+        "watchers": 89984,
+        "forks": 19376
+    },
+    "https://github.com/yangshun/tech-interview-handbook": {
+        "stars": 39937,
+        "watchers": 74831,
+        "forks": 10115
+    },
+    "https://github.com/chartjs/Chart.js": {
+        "stars": 39980,
+        "watchers": 57556,
+        "forks": 11538
+    },
+    "https://github.com/angular/angular": {
+        "stars": 39986,
+        "watchers": 82794,
+        "forks": 21864
+    },
+    "https://github.com/TheAlgorithms/Python": {
+        "stars": 39818,
+        "watchers": 140515,
+        "forks": 36272
+    },
+    "https://github.com/airbnb/javascript": {
+        "stars": 38648,
+        "watchers": 124955,
+        "forks": 23970
+    },
+    "https://github.com/justjavac/free-programming-books-zh_CN": {
+        "stars": 39976,
+        "watchers": 94450,
+        "forks": 26397
+    },
+    "https://github.com/kubernetes/kubernetes": {
+        "stars": 39987,
+        "watchers": 90410,
+        "forks": 33143
+    },
+    "https://github.com/slatedocs/slate": {
+        "stars": 34282,
+        "watchers": 34302,
+        "forks": 21565
+    },
+    "https://github.com/rust-lang/rust": {
+        "stars": 39179,
+        "watchers": 69103,
+        "forks": 9506
+    },
+    "https://github.com/labuladong/fucking-algorithm": {
+        "stars": 39736,
+        "watchers": 108400,
+        "forks": 21323
+    },
+    "https://github.com/mmistakes/minimal-mistakes": {
+        "stars": 9894,
+        "watchers": 9894,
+        "forks": 19908
+    },
+    "https://github.com/adam-p/markdown-here": {
+        "stars": 39431,
+        "watchers": 55994,
+        "forks": 10883
+    },
+    "https://github.com/CoreyMSchafer/code_snippets": {
+        "stars": 8935,
+        "watchers": 8936,
+        "forks": 16591
+    },
+    "https://github.com/MarlinFirmware/Marlin": {
+        "stars": 13336,
+        "watchers": 13477,
+        "forks": 16969
+    },
+    "https://github.com/coding-boot-camp/prework-about-me": {
+        "stars": 60,
+        "watchers": 60,
+        "forks": 15971
+    },
+    "https://github.com/mrdoob/three.js": {
+        "stars": 37228,
+        "watchers": 83777,
+        "forks": 32402
+    },
+    "https://github.com/donnemartin/system-design-primer": {
+        "stars": 39733,
+        "watchers": 189922,
+        "forks": 34388
+    },
+    "https://github.com/tensorflow/tensorflow": {
+        "stars": 39752,
+        "watchers": 166537,
+        "forks": 86979
+    },
+    "https://github.com/Pierian-Data/Complete-Python-3-Bootcamp": {
+        "stars": 20985,
+        "watchers": 20989,
+        "forks": 71647
+    },
+    "https://github.com/animate-css/animate.css": {
+        "stars": 37177,
+        "watchers": 75166,
+        "forks": 16203
+    },
+    "https://github.com/DataScienceSpecialization/courses": {
+        "stars": 3909,
+        "watchers": 3909,
+        "forks": 31485
+    },
+    "https://github.com/DefinitelyTyped/DefinitelyTyped": {
+        "stars": 39569,
+        "watchers": 40011,
+        "forks": 27615
+    },
+    "https://github.com/webpack/webpack": {
+        "stars": 39964,
+        "watchers": 61435,
+        "forks": 8433
+    },
+    "https://github.com/jquery/jquery": {
+        "stars": 38403,
+        "watchers": 56496,
+        "forks": 20418
+    },
+    "https://github.com/ryanmcdermott/clean-code-javascript": {
+        "stars": 39936,
+        "watchers": 69921,
+        "forks": 9417
+    },
+    "https://github.com/wakaleo/game-of-life": {
+        "stars": 1730,
+        "watchers": 1952,
+        "forks": 17648
+    },
+    "https://github.com/expressjs/express": {
+        "stars": 38289,
+        "watchers": 57713,
+        "forks": 9786
+    },
+    "https://github.com/scikit-learn/scikit-learn": {
+        "stars": 39642,
+        "watchers": 50791,
+        "forks": 23253
+    },
+    "https://github.com/vuejs/vue": {
+        "stars": 39981,
+        "watchers": 198012,
+        "forks": 32528
+    },
+    "https://github.com/torvalds/linux": {
+        "stars": 36109,
+        "watchers": 135095,
+        "forks": 43829
+    },
+    "https://github.com/996icu/996.ICU": {
+        "stars": 26235,
+        "watchers": 263274,
+        "forks": 21540
+    },
+    "https://github.com/electron/electron": {
+        "stars": 39975,
+        "watchers": 102664,
+        "forks": 13693
+    },
+    "https://github.com/tensorflow/models": {
+        "stars": 39951,
+        "watchers": 74061,
+        "forks": 45956
+    },
+    "https://github.com/thedaviddias/Front-End-Checklist": {
+        "stars": 39873,
+        "watchers": 60773,
+        "forks": 5879
+    },
+    "https://github.com/elastic/elasticsearch": {
+        "stars": 38820,
+        "watchers": 60454,
+        "forks": 21992
+    },
+    "https://github.com/reduxjs/redux": {
+        "stars": 39986,
+        "watchers": 58381,
+        "forks": 15234
+    },
+    "https://github.com/scm-ninja/starter-web": {
+        "stars": 343,
+        "watchers": 343,
+        "forks": 18220
+    },
+    "https://github.com/rdpeng/ExData_Plotting1": {
+        "stars": 221,
+        "watchers": 221,
+        "forks": 56386
+    },
+    "https://github.com/scutan90/DeepLearning-500-questions": {
+        "stars": 39899,
+        "watchers": 48520,
+        "forks": 15171
+    },
+    "https://github.com/danielmiessler/SecLists": {
+        "stars": 39977,
+        "watchers": 40283,
+        "forks": 20470
+    },
+    "https://github.com/danistefanovic/build-your-own-x": {
+        "stars": 39610,
+        "watchers": 157291,
+        "forks": 14777
+    }
+}

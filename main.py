@@ -112,8 +112,8 @@ def main():
             ERROR['error'] = SOMETHING_WRONG
             return False
     elif OPERATION == "create_dataset":
-        # if not create_json.main():
-        #     return False
+        if not create_json.main():
+            return False
         if not parse_json.main():
             return False
     else:

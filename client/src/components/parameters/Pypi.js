@@ -74,7 +74,7 @@ const Pypi = ({
           <Spinner />
         ) : pypi=== null ? (
           <>
-            <h3>Enter your Github Repo Link to check for Pypi info in your repo</h3>
+            <h3>Enter your pypi project link to check for pypi info .</h3>
           </>
         ) : (
             pypi.error? (

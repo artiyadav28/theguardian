@@ -2,7 +2,7 @@ const express = require('express')
 const {spawn} = require('child_process');
 const app = express()
 const bodyParser = require('body-parser')
-
+// const httpStatus = require('http-status')
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded())
 
@@ -154,5 +154,20 @@ app.post('/npm',async (req,res)=>{
         console.log(e);
     }
 })
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+//     app.get("*", (req, res) => {
+//       res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//     });
+// }
+// app.use((req, res, next) => {
+//     next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
+//   });
+  
+//   // convert error to ApiError, if needed
+//   app.use(errorConverter);
+  
+//   // handle error
+//   app.use(errorHandler);
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`server started on port ${PORT}`))

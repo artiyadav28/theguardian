@@ -73,7 +73,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
           <Spinner />
         ) : npm === null ? (
           <>
-            <h3>Enter the npm package Link to check for npm details</h3>
+            <h3>Enter the npm package link to check for npm details.</h3>
           </>
         ) : (
           npm.error?(

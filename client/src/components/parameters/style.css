@@ -18,7 +18,33 @@
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
+    word-wrap: break-word;
     white-space: nowrap;
     color:black;
 }
+.text{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+footer{
+    position: absolute;
+    color: white;
+    padding: 8px;
+    font-size: 24px;
+    font-family: Consolas;
+    letter-spacing: 2.5px;
+   
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+  
+  }
+  .footer a{
+     color: white;
+     
+  }
+  .footer a:hover{
+     color: black;
+  }

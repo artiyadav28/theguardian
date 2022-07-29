@@ -74,7 +74,7 @@ const SensitiveInfo = ({
           <Spinner />
         ) : sensitive === null ? (
           <>
-            <h3>Enter your Github Repo Link to check for sensitive info in your repo</h3>
+            <h3>Enter your github repo link to check for sensitive info .</h3>
           </>
         ) : (
             sensitive.error? (

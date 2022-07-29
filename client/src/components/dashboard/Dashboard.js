@@ -13,8 +13,9 @@ import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
 import { getRepoVersionDetails } from "../../actions/repo";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import "react-circular-progressbar/dist/styles.css";
-
+import '../parameters/style.css'
 const Dashboard = ({ repo: { loading, info }, getRepoVersionDetails }) => {
   const [repo, setRepo] = useState("");
   // const percentage = 34;
@@ -25,7 +26,40 @@ const Dashboard = ({ repo: { loading, info }, getRepoVersionDetails }) => {
   return (
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
-      <link type="image/png" sizes="16x16" rel="icon" href="./icons8-python-16.png"/>
+      <Box
+          className="styled_container"
+          // style={{backgroundColor:"white",padding:"2rem", borderRadius:"0.7rem"}}
+          sx={{
+            maxWidth: "100%",
+          }}
+          style={{marginBottom:"3rem"}}
+        >
+        <h3 className="text">Open Source Software (OSS) Security Inspector</h3>
+        <h3>Prominent Features</h3>
+        <ul>
+          <li>
+            <h4>Trust Score</h4>
+            <p>EDF probability distribution applied on data scraped from GIT API</p>
+          </li>
+          <li>
+            <h4>GIT</h4>
+            <p>Recursively walk and analyze dependencies of a GIT repository</p>
+          </li>
+          <li>
+            <h4>PyPI</h4>
+            <p>Interact with PyPI API to fetch dependencies of a package and analyze for CVEs</p>
+          </li>
+          <li>
+            <h4>NPM</h4>
+            <p>Interact with NPM API to fetch dependencies of a package and identify vulnerabilities</p>
+          </li>
+          <li>
+            <h4>Sensitive Info</h4>
+            <p>Identify hardcoded secrets, tokens, passwords, emails from a repository</p>
+          </li>
+        </ul>
+        <p style={{textAlign:"center", letterSpacing:"1px",fontWeight:"bold"}} >Made with love by Raunak, Arti, Himanshu <FavoriteIcon style={{color:"red"}}/></p>
+        </Box>
       </Container>
     </>
   );

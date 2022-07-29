@@ -88,7 +88,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
           <Spinner />
         ) : info === null ? (
           <>
-            <h3>Enter your Github Repo Link to check for version details</h3>
+            <h3>Enter your github repo link to check for details.</h3>
           </>
         ) : (
           info.error?(

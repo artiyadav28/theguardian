@@ -92,7 +92,7 @@ const LegitPercent = ({
           <Spinner />
         ) : legit === null ? (
           <>
-            <h3>Enter your Github Repo Link to calculate legit percentage</h3>
+            <h3>Enter your github repo link to calculate trust percentage.</h3>
           </>
         ) : (
           legit.error ?(

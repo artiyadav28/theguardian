@@ -14,6 +14,7 @@ import LegitPercent from './components/parameters/LegitPercent';
 import SensitiveInfo from './components/parameters/SensitiveInfo';
 import Pypi from './components/parameters/Pypi';
 import Npm from './components/parameters/Npm';
+import Footer from './components/helper/Footer'
 const App=()=> {
 
   return (
@@ -29,6 +30,7 @@ const App=()=> {
           <Route path={'/pypi'} element={<Pypi />} />
           <Route path={'/npm'} element={<Npm />} />
       </Routes>
+      {/* <Footer/> */}
     </Router>
     </Provider>
     // <Provider store={store}>

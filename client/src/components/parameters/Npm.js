@@ -54,7 +54,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
         >
           <TextField
             fullWidth
-            label='repo link'
+            label='Repository URL'
             id='fullWidth'
             value={repo}
             onChange={(e) => setRepo(e.target.value)}
@@ -64,7 +64,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#EDEDED", color: "black" }}
+            style={{ background: "#C6C6C6", color: "black" }}
           >
             Go
           </Button>
@@ -73,7 +73,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
           <Spinner />
         ) : npm === null ? (
           <>
-            <h3>Enter the npm package link to check for npm details.</h3>
+            <h3>Enter NPM package URL to scan for vulnerabilities</h3>
           </>
         ) : (
           npm.error?(

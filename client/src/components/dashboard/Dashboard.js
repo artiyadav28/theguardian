@@ -35,30 +35,30 @@ const Dashboard = ({ repo: { loading, info }, getRepoVersionDetails }) => {
           style={{marginBottom:"3rem"}}
         >
         <h3 className="text">Open Source Software (OSS) Security Inspector</h3>
-        <h3>Prominent Features</h3>
+        <h3 className="content">Prominent Features</h3>
         <ul>
           <li>
-            <h4>Trust Score</h4>
-            <p>EDF probability distribution applied on data scraped from GIT API</p>
+            <h4 className="content">Trust Score</h4>
+            <p className="content">EDF probability distribution applied on data scraped from GIT API</p>
           </li>
           <li>
-            <h4>GIT</h4>
-            <p>Recursively walk and analyze dependencies of a GIT repository</p>
+            <h4 className="content">GIT</h4>
+            <p className="content">Recursively walk and analyze dependencies of a GIT repository</p>
           </li>
           <li>
-            <h4>PyPI</h4>
-            <p>Interact with PyPI API to fetch dependencies of a package and analyze for CVEs</p>
+            <h4 className="content">PyPI</h4>
+            <p className="content">Interact with PyPI API to fetch dependencies of a package and analyze for CVEs</p>
           </li>
           <li>
-            <h4>NPM</h4>
-            <p>Interact with NPM API to fetch dependencies of a package and identify vulnerabilities</p>
+            <h4 className="content">NPM</h4>
+            <p className="content">Interact with NPM API to fetch dependencies of a package and identify vulnerabilities</p>
           </li>
           <li>
-            <h4>Sensitive Info</h4>
-            <p>Identify hardcoded secrets, tokens, passwords, emails from a repository</p>
+            <h4 className="content">Sensitive Info</h4>
+            <p className="content">Identify hardcoded secrets, tokens, passwords, emails from a repository</p>
           </li>
         </ul>
-        <p style={{textAlign:"center", letterSpacing:"1px",fontWeight:"bold"}} >Made with <FavoriteIcon style={{color:"red"}}/> by Raunak, Arti, Himanshu</p>
+        <p style={{textAlign:"center", letterSpacing:"1px",fontWeight:"bold"}} >Made with ❤️ by <a href="https://github.com/imraunn" style={{textDecoration:"none",color:"blue"}}>Raunak</a>, <a href="https://github.com/artiyadav28" style={{textDecoration:"none",color:"blue"}}>Arti</a>, <a href="https://github.com/himanshudas75" style={{textDecoration:"none",color:"blue"}}>Himanshu</a></p>
         </Box>
       </Container>
     </>

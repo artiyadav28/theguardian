@@ -44,7 +44,7 @@ const Pypi = ({
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
-        <h2 className="styled-text">Pypi Info</h2>
+        <h2 className="styled-text">PyPI Scanner</h2>
         <Box
           className='styled_container'
           // style={{backgroundColor:"white",padding:"2rem", borderRadius:"0.7rem"}}
@@ -55,7 +55,7 @@ const Pypi = ({
         >
           <TextField
             fullWidth
-            label='repo link'
+            label='Repository URL'
             id='fullWidth'
             value={repo}
             onChange={(e) => setRepo(e.target.value)}
@@ -74,7 +74,7 @@ const Pypi = ({
           <Spinner />
         ) : pypi=== null ? (
           <>
-            <h3>Enter your pypi project link to check for pypi info .</h3>
+            <h3>Enter PyPI project URL to scan for vulnerabilities</h3>
           </>
         ) : (
             pypi.error? (

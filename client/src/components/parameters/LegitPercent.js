@@ -73,7 +73,7 @@ const LegitPercent = ({
         >
           <TextField
             fullWidth
-            label='repo link'
+            label='Repository URL'
             id='fullWidth'
             value={repo}
             onChange={(e) => setRepo(e.target.value)}
@@ -83,7 +83,7 @@ const LegitPercent = ({
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#EDEDED", color: "black" }}
+            style={{ background: "#C6C6C6", color: "black" }}
           >
             Go
           </Button>
@@ -92,7 +92,7 @@ const LegitPercent = ({
           <Spinner />
         ) : legit === null ? (
           <>
-            <h3>Enter your github repo link to calculate trust percentage.</h3>
+            <h3>Enter Github repository URL to compute trust score</h3>
           </>
         ) : (
           legit.error ?(

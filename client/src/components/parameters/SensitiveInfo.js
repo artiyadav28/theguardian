@@ -55,7 +55,7 @@ const SensitiveInfo = ({
         >
           <TextField
             fullWidth
-            label='repo link'
+            label='Repository URL'
             id='fullWidth'
             value={repo}
             onChange={(e) => setRepo(e.target.value)}
@@ -74,7 +74,7 @@ const SensitiveInfo = ({
           <Spinner />
         ) : sensitive === null ? (
           <>
-            <h3>Enter your github repo link to check for sensitive info .</h3>
+            <h3>Enter Github repository URL to scan for sensitive information</h3>
           </>
         ) : (
             sensitive.error? (

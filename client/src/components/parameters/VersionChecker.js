@@ -59,7 +59,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
-        <h2 className="styled-text">Version Checker</h2>
+        <h2 className="styled-text">GIT Scanner</h2>
         <Box
           className="styled_container"
           sx={{
@@ -69,7 +69,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
         >
           <TextField
             fullWidth
-            label='repo link'
+            label='Repository URL'
             id='fullWidth'
             value={repo}
             onChange={(e) => setRepo(e.target.value)}
@@ -79,7 +79,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#E7E7E7", color: "black" }}
+            style={{ background: "#C6C6C6", color: "black" }}
           >
             Go
           </Button>
@@ -88,7 +88,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
           <Spinner />
         ) : info === null ? (
           <>
-            <h3>Enter your github repo link to check for details.</h3>
+            <h3>Enter Github repository URL to scan for vulnerabilities</h3>
           </>
         ) : (
           info.error?(

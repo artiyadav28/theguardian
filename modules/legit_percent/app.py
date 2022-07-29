@@ -2,8 +2,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 import pathlib
-from .modules import check_legit
-from .modules import rate_limit
+from .functions import check_legit
+from .functions import rate_limit
 from math import ceil
 from dotenv import dotenv_values
 

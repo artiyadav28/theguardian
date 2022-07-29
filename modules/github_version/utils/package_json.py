@@ -1,7 +1,5 @@
 import json
-import modulefinder
 import requests
-import re
 import js2py
 
 compare=js2py.require('compare-versions')

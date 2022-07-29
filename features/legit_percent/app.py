@@ -8,57 +8,56 @@ from math import ceil
 from dotenv import dotenv_values
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
-ENV_DIR = BASE_DIR / ".env"
+ENV_DIR = BASE_DIR / "../../.env"
 config = dotenv_values(ENV_DIR)
 
 PAGE_LIMIT = 100
 REPO_INFO = {}
 
-def init():
-    global GITHUB_TOKEN
+def init(cnf):
     # Choose one which has atleast one request remaining and also check for validity of the tokens
-    foundToken = False
-    for name in config:
-        limit = rate_limit.getLimit(config[name])
+    token = "ERROR"
+    for name in cnf:
+        limit = rate_limit.getLimit(cnf[name])
         if limit == -1:
-            return (False, name)
-        if (not foundToken) and (limit >= 1):
-            GITHUB_TOKEN = config[name]
-            foundToken = True
-    return (foundToken, "NOTA")
+            return "ERROR"
+        if (token != "ERROR") and (limit >= 1):
+            token = cnf[name]
+    return token
 
-def chooseOptimal():
-    global GITHUB_TOKEN
+def choose_optimal(info, cnf):
     # Choosing a suitable token based on the approximate number of requests we have to make
-    numberReq = ceil(REPO_INFO["stargazers_count"]/100)
+    number_of_req = ceil(info["stargazers_count"]/100)
     chosen_one = 1000000
-    for name in config:
-        limit = rate_limit.getLimit(config[name])
-        if limit >= numberReq:
-            if limit < chosen_one:
-                chosen_one = limit
-                GITHUB_TOKEN = config[name]
-    if chosen_one == 1000000:
-        return False
-    return True
+    token = "ERROR"
+    for name in cnf:
+        limit = rate_limit.getLimit(cnf[name])
+        if limit >= number_of_req and limit < chosen_one:
+            chosen_one = limit
+            token = cnf[name]
+    return token
 
-def fillRepoInfo():
-    global API_URL, REPO_INFO, GITHUB_TOKEN
-    r = requests.get(API_URL, auth=HTTPBasicAuth("", GITHUB_TOKEN))
-    REPO_INFO = json.loads(r.text)
+def fill_repo_info(api, token):
+    r = requests.get(api, auth=HTTPBasicAuth("", token))
+    return json.loads(r.text)
 
 def main(url):
-    global URL, API_URL, REPO_INFO, GITHUB_TOKEN
+    global URL, API_URL, REPO_INFO, GITHUB_TOKEN, config
     URL = url
     API_URL = f"https://api.github.com/repos/{URL.split('/')[-2]}/{URL.split('/')[-1]}"
     REPORT = {}
     try:
-        check, err = init()
-        if not check:
+        token = init(config)
+        if token == "ERROR":
             raise Exception("Token Limit Expired")
-        fillRepoInfo()
-        if not chooseOptimal():
+        else:
+            GITHUB_TOKEN = token
+        REPO_INFO = fill_repo_info(API_URL, GITHUB_TOKEN)
+        token = choose_optimal(REPO_INFO, config)
+        if token == "ERROR":
             raise Exception("No optimal token found")
+        else:
+            GITHUB_TOKEN = token
         REPORT = check_legit.generateReport(REPO_INFO, GITHUB_TOKEN, API_URL)
     except:
         REPORT = {}

@@ -65,6 +65,9 @@ def main(url):
     finally:
         if "error" in REPORT.keys():
             return False
+        if "message" in REPORT.keys():
+            REPORT['error'] = REPORT['message']
+            del REPORT['message']
         print(json.dumps(REPORT, indent=4))
         return True
     

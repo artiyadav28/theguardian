@@ -113,8 +113,10 @@ def main():
             return False
     elif OPERATION == "create_dataset":
         if not create_json.main():
+            ERROR['error'] = SOMETHING_WRONG
             return False
         if not parse_json.main():
+            ERROR['error'] = SOMETHING_WRONG
             return False
     else:
         return False

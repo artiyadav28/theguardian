@@ -58,7 +58,7 @@ const Dashboard = ({ repo: { loading, info }, getRepoVersionDetails }) => {
             <p>Identify hardcoded secrets, tokens, passwords, emails from a repository</p>
           </li>
         </ul>
-        <p style={{textAlign:"center", letterSpacing:"1px",fontWeight:"bold"}} >Made with love by Raunak, Arti, Himanshu <FavoriteIcon style={{color:"red"}}/></p>
+        <p style={{textAlign:"center", letterSpacing:"1px",fontWeight:"bold"}} >Made with <FavoriteIcon style={{color:"red"}}/> by Raunak, Arti, Himanshu</p>
         </Box>
       </Container>
     </>

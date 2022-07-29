@@ -7,7 +7,7 @@ from modules.sensitive_info import app as si
 from modules.github_version import app as gv
 from modules.npm_version import app as nv
 from modules.pypi_version import app as pv
-from modules.create_dataset import create_json
+from modules.create_dataset import create_json, parse_json
 
 AVAILABLE_OPERATIONS = ["legit_percent","sensitive_info","github_version","pypi_version","npm_version","create_dataset"]
 ERROR = {}
@@ -72,9 +72,6 @@ def is_npm_url():
         return False
     return is_valid_url()
 
-def dataset():
-    create_json.main()
-
 def main():
     global OPERATION, AVAILABLE_OPERATIONS, ERROR, URL
     if OPERATION not in AVAILABLE_OPERATIONS:
@@ -115,7 +112,10 @@ def main():
             ERROR['error'] = SOMETHING_WRONG
             return False
     elif OPERATION == "create_dataset":
-        dataset()
+        # if not create_json.main():
+        #     return False
+        if not parse_json.main():
+            return False
     else:
         return False
     return True

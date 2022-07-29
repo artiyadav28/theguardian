@@ -21,7 +21,7 @@ def init(cnf):
         limit = rate_limit.getLimit(cnf[name])
         if limit == -1:
             return "ERROR"
-        if (token != "ERROR") and (limit >= 1):
+        if (token == "ERROR") and (limit >= 1):
             token = cnf[name]
     return token
 

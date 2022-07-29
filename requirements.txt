@@ -7,3 +7,4 @@ requirements-parser
 pandas
 gittyleaks
 safety
+outdated

@@ -65,7 +65,7 @@ const SensitiveInfo = ({
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#C3AED6", color: "black" }}
+            style={{ background: "#C6C6C6", color: "black" }}
           >
             Go
           </Button>

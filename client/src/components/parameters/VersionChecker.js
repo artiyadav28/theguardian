@@ -79,7 +79,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#C3AED6", color: "black" }}
+            style={{ background: "#E7E7E7", color: "black" }}
           >
             Go
           </Button>

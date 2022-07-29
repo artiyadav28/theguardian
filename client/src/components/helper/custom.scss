@@ -1,7 +1,8 @@
 // Your variable overrides
 $sidebar-bg-color: white;
 $sidebar-color: #ffffff !default;
-$icon-bg-color: #F3ECF4 !default;
+// $icon-bg-color: #F3ECF4 !default;
+$icon-bg-color: #EEEEEE !default;
 $highlight-color: #000000 !default;
 $breakpoint-xxl: 4000px !default;
 @import '~react-pro-sidebar/dist/scss/styles.scss';

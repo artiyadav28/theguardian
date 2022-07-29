@@ -44,7 +44,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
-        <h2 className="styled-text">Npm</h2>
+        <h2 className="styled-text">NPM info</h2>
         <Box
           className="styled_container"
           sx={{
@@ -64,7 +64,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#C3AED6", color: "black" }}
+            style={{ background: "#EDEDED", color: "black" }}
           >
             Go
           </Button>

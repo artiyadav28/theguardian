@@ -39,6 +39,11 @@ import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import CodeIcon from '@mui/icons-material/Code';
+import JavascriptIcon from '@mui/icons-material/Javascript';
+import PercentIcon from '@mui/icons-material/Percent';
+import KeyIcon from '@mui/icons-material/Key';
 import "./custom.scss"
 function AppBar(props) {
   return (
@@ -75,7 +80,7 @@ function Navbar() {
                 cursor: "pointer",
                 width: "40px",
                 height: "40px",
-                background: "#F3ECF4",
+                background: "#EEEEEE",
                 color: "black",
                 textAlign: "center",
                 borderRadius: " 50%",
@@ -90,12 +95,12 @@ function Navbar() {
           <Box sx={{ ml:3}} />
 
           <Link
-            style={{fontSize:"2rem",color:"black",marginLeft:"1rem",textDecoration:"none"}}
+            style={{fontSize:"2rem",color:"black",marginLeft:"1rem",textDecoration:"none",color:"#039371"}}
             to='/dashboard'
             className="styled-text"
           >
-            <VerifiedUserIcon  size="large"/>
-            {"  Repo Validator"}
+            {/* <VerifiedUserIcon  size="large"/> */}
+            {"  The Guardian Project"}
           </Link>
         </Toolbar>
       </AppBar>
@@ -119,17 +124,18 @@ function Navbar() {
                   color:"black"
                 }}
               >
-                {"Git Secure"}
+                
               </div>
             </SidebarHeader>
             <SidebarContent>
+            {/* C3AED6 */}
           <Menu iconShape='square' style={{color:"black"}} className="styled-text" >
-              <MenuItem active={path.includes('/dashboard')} style={{backgroundColor:(!path.includes('/dashboard')?"white":"#C3AED6")}} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
-              <MenuItem active={path.includes('/versionChecker')} style={{backgroundColor:(!path.includes('/versionChecker')?"white":"#C3AED6")}}  icon={<FaList />}>Version Checker <Link to="/versionChecker"/></MenuItem>
-              <MenuItem active={path.includes('/legitPercent')} style={{backgroundColor:(!path.includes('/legitPercent')?"white":"#C3AED6")}} icon={<FaRegHeart />}>Legit Percent <Link to="/legitPercent"/></MenuItem>
-              <MenuItem active={path.includes('/sensitiveinfo')} style={{backgroundColor:(!path.includes('/sensitiveinfo')?"white":"#C3AED6")}} icon={<RiPencilLine />}>Sensitive Info<Link to="/sensitiveinfo"/></MenuItem>
-              <MenuItem active={path.includes('/pypi')} style={{backgroundColor:(!path.includes('/pypi')?"white":"#C3AED6")}} icon={<BiCog />}>Pypi<Link to="/pypi"/></MenuItem>
-              <MenuItem active={path.includes('/npm')} style={{backgroundColor:(!path.includes('/npm')?"white":"#C3AED6")}} icon={<BiCog />}>Npm<Link to="/npm"/></MenuItem>
+              <MenuItem active={path.includes('/dashboard')} style={{backgroundColor:(!path.includes('/dashboard')?"white":"#EDEDED")}} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
+              <MenuItem active={path.includes('/legitPercent')} style={{backgroundColor:(!path.includes('/legitPercent')?"white":"#EDEDED")}} icon={<PercentIcon />}>Trust Score <Link to="/legitPercent"/></MenuItem>
+              <MenuItem active={path.includes('/versionChecker')} style={{backgroundColor:(!path.includes('/versionChecker')?"white":"#EDEDED")}}  icon={<GitHubIcon />}>GIT <Link to="/versionChecker"/></MenuItem>
+              <MenuItem active={path.includes('/pypi')} style={{backgroundColor:(!path.includes('/pypi')?"white":"#EDEDED")}} icon={<CodeIcon />}>Pypi<Link to="/pypi"/></MenuItem>
+              <MenuItem active={path.includes('/npm')} style={{backgroundColor:(!path.includes('/npm')?"white":"#EDEDED")}} icon={<JavascriptIcon />}>Npm<Link to="/npm"/></MenuItem>
+              <MenuItem active={path.includes('/sensitiveinfo')} style={{backgroundColor:(!path.includes('/sensitiveinfo')?"white":"#EDEDED")}} icon={<KeyIcon />}>Sensitive Info<Link to="/sensitiveinfo"/></MenuItem>
           </Menu>
           </SidebarContent>
         </ProSidebar>

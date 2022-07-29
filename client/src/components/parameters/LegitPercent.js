@@ -16,6 +16,8 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import StickyHeadTable from "./Table2";
 import ProgressProvider from "./ProgressProvider";
+import ErrorIcon from '@mui/icons-material/Error';
+import {MenuItem} from 'react-pro-sidebar'
 import "./style.css"
 const color = ["#B20600", "#E45826", "#F0A500", "#76BA99"];
 const LegitPercent = ({
@@ -60,7 +62,7 @@ const LegitPercent = ({
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
         {/* <div>Home</div> */}
-        <h2 className="styled-text">Legit Percent</h2>
+        <h2 className="styled-text">Trust Score</h2>
         <Box
           className="styled_container"
           // style={{backgroundColor:"white",padding:"2rem", borderRadius:"0.7rem"}}
@@ -81,7 +83,7 @@ const LegitPercent = ({
             variant='contained'
             endIcon={<SendIcon />}
             onClick={handleClick}
-            style={{ background: "#C3AED6", color: "black" }}
+            style={{ background: "#EDEDED", color: "black" }}
           >
             Go
           </Button>

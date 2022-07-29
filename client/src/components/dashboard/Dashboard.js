@@ -25,7 +25,7 @@ const Dashboard = ({ repo: { loading, info }, getRepoVersionDetails }) => {
   return (
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>
-        <h1>hello guys , welcome to my website</h1>
+      <link type="image/png" sizes="16x16" rel="icon" href="./icons8-python-16.png"/>
       </Container>
     </>
   );

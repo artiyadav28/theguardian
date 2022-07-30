@@ -101,3 +101,21 @@ To start the project in production mode, follow these steps:
     NODE_ENV=production pm2 start server.js --name "TheGuardianProject"
     ```
 Access the website from http://localhost:5000
+
+## Dataset Collection
+The script used for generating the dataset for trust score is also included.
+To create your own dataset:
+1. Head over to the *create_dataset* folder inside the *modules* directory.
+2. In the *files* folder, in the **links.txt** file, enter the URLs of the repository which you want to include in the dataset.
+3. In the project's home folder, run:
+    ```bash
+    python3 main.py create_dataset
+    ```
+Note that you need to have plenty of tokens in the .env file for this function.
+
+## Clean
+The *run.sh* script contains a *clean* feature as well, for cleaning any remaining cloned repositories. To use this, run:
+```bash
+chmod +x run.sh
+./run.sh clean
+```

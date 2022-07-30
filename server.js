@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded())
 // parse application/json
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}));
-app.post('/versionChecker',async (req,res)=>{
+app.post('/git',async (req,res)=>{
     try{
         const {url}=req.body;
         console.log(url);
@@ -39,7 +39,7 @@ app.post('/versionChecker',async (req,res)=>{
         console.log(e);
     }
 })
-app.post('/legitPercent',async (req,res)=>{
+app.post('/trust_score',async (req,res)=>{
     try{
         const {url}=req.body;
         console.log(url);
@@ -68,7 +68,7 @@ app.post('/legitPercent',async (req,res)=>{
         console.log(e);
     }
 })
-app.post('/sensitiveinfo',async (req,res)=>{
+app.post('/sensitive_info',async (req,res)=>{
     try{
         const {url}=req.body;
         console.log(url);

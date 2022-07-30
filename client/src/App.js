@@ -24,9 +24,9 @@ const App=()=> {
       <Routes>
           <Route path={'/'} element={<Home />} />
           <Route path={'/dashboard'} element={<Dashboard />} />
-          <Route path={'/versionChecker'} element={<VersionChecker />} />
-          <Route path={'/legitPercent'} element={<LegitPercent />} />
-          <Route path={'/sensitiveinfo'} element={<SensitiveInfo />} />
+          <Route path={'/git'} element={<VersionChecker />} />
+          <Route path={'/trust_score'} element={<LegitPercent />} />
+          <Route path={'/sensitive_info'} element={<SensitiveInfo />} />
           <Route path={'/pypi'} element={<Pypi />} />
           <Route path={'/npm'} element={<Npm />} />
       </Routes>

@@ -73,16 +73,16 @@ A bash script has been provided for automatically running the project.
 ## Manual Start
 - ### Development Mode
     To start the project in the development mode manually, follow these steps:
-    1. Go to the project folder, and run:
+    - Go to the project folder, and run:
         ```bash
         pip3 install -r requirements.txt
         npm install
         ```
-    2. Go the the *client* folder, and run:
+    - Go the the *client* folder, and run:
         ```bash
         npm install
         ```
-    3. In the project folder, run:
+    - In the project folder, run:
         ```bash
         NODE_ENV=development npm run dev
         ```
@@ -93,19 +93,19 @@ A bash script has been provided for automatically running the project.
 
 - ### Production Mode
     To start the project in production mode, follow these steps:
-    1. Go the project folder, and run:
+    - Go the project folder, and run:
         ```bash
         pip3 install -r requirements.txt
         npm install
         ```
-    2. Go to the *client* folder:  
+    - Go to the *client* folder:  
         If you want to build the client, run:
         ```bash
         npm install
         npm run build
         ```
         Else, you can skip this part.
-    3. In the project folder, run:
+    - In the project folder, run:
         ```bash
         NODE_ENV=production pm2 start server.js --name "TheGuardianProject"
         ```
@@ -139,9 +139,9 @@ A bash script has been provided for automatically running the project.
 ## Dataset Collection
 The script used for generating the dataset for trust score is also included.
 To create your own dataset:
-1. Head over to the *create_dataset* folder inside the *modules* directory.
-2. In the *files* folder, in the **links.txt** file, enter the URLs of the repository which you want to include in the dataset.
-3. In the project's home folder, run:
+- Head over to the *create_dataset* folder inside the *modules* directory.
+- In the *files* folder, in the **links.txt** file, enter the URLs of the repository which you want to include in the dataset.
+- In the project's home folder, run:
     ```bash
     python3 main.py create_dataset
     ```

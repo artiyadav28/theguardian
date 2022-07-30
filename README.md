@@ -79,7 +79,8 @@ To start the project in the development mode manually, follow these steps:
     ```
     (You need not set the NODE_ENV environment variable to 'development', just make sure that it is not set to 'production')  
   
-The server will start on port 5000, and the client on port 3000. You can access the website by visiting: http://localhost:3000
+The server will start on port 5000, and the client on port 3000.  
+You can access the website by visiting: http://localhost:3000
 
 ### Production Mode
 To start the project in production mode, follow these steps:

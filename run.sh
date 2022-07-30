@@ -31,10 +31,14 @@ function build-prod() {
     cd ..
 }
 
-function run-prod() {
-    server-install
+function stop-prod() {
     pm2 stop TheGuardianProject
     pm2 delete TheGuardianProject
+}
+
+function run-prod() {
+    server-install
+    stop-prod
     port=$1
     if ! [[ $port =~ $re ]]
     then
@@ -55,6 +59,9 @@ then
     else
         run-prod $3
     fi
+elif [[ "$1" == "stop" ]]
+then
+    stop-prod
 elif [[ "$1" == "dataset" ]]
 then
     pip3 install -r requirements.txt

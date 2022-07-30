@@ -38,6 +38,8 @@ The following should be installed for this project to work:
 - **You can start the project with zero tokens as well**, but for using the "Trust Score" feature for repositories with a lot of stars, you will need tokens.
 - There is no upper limit to the number of tokens you can add.
 
+**NOTE:** For production mode, you need to build your client atleast once, before running.
+
 ## Auto Start
 A bash script has been provided for automatically running the project.
 - ### Development Mode
@@ -123,7 +125,19 @@ A bash script has been provided for automatically running the project.
     ```
     Access the website from http://localhost:1025  
     (The specified port must be greater than or equal to 1024)  
-  
+
+### Stop Production Mode
+To stop the project running in production mode, run:
+```bash
+chmod +x run.sh
+./run.sh stop
+```
+To stop it manually, enter these two commands:
+```bash
+pm2 stop TheGuardianProject
+pm2 delete TheGuardianProject
+```
+
 ## Common Issues
 - The first time you use **GIT** or **NPM** in the website, it may take a long time to get the results or it might give an error. This is only a one-time thing because the corresponding python module (js2py) requires some time to initialise.
     In order to not face this issue, after starting the project, run this command:

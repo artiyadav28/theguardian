@@ -8,13 +8,13 @@ An Open Source Software (OSS) Security Inspector made with ❤️ by
 Live Instance: [theguardianproject.ml](http://theguardianproject.ml)
 
 ## Features
-- **TRUST SCORE**  
+- **Trust Score**  
     EDF probability distribution applied on data scraped from GIT API to generate an estimate trust score of a repository.
-- **GIT**  
+- **Git Analysis**  
     Recursively walk and analyze dependencies of a GIT repository to check for vulnerabilities and outdated dependencies.
-- **PYPI**  
+- **PyPI Analysis**  
     Interact with PyPI API to fetch dependencies of a package and analyze for CVEs.
-- **NPM**  
+- **NPM Analysis**  
     Interact with NPM API to fetch dependencies of a package and identify vulnerabilities and outdated dependencies.
-- **SENSITIVE INFO**  
+- **Sensitive Info**  
     Identify hardcoded secrets, tokens, passwords, emails from a repository.

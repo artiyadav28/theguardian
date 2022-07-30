@@ -67,6 +67,7 @@ You can also specify a custom port using:
 ./run.sh prod --no-build 1025
 ```
 This will start the server on port 1025 (http://localhost:1025).  
+(The specified port must be greater than or equal to 1024)  
 By default, the port is 5000 if you do not specify anything.
 
 ## Manual Start
@@ -114,7 +115,8 @@ If you wish to specify a port as well, then run:
 ```bash
 NODE_ENV=production PORT=1025 pm2 start server.js --name "TheGuardianProject"
 ```
-Access the website from http://localhost:1025 
+Access the website from http://localhost:1025  
+(The specified port must be greater than or equal to 1024)
 
 ## Dataset Collection
 The script used for generating the dataset for trust score is also included.

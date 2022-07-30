@@ -3,8 +3,8 @@ import json
 from time import sleep
 from dotenv import dotenv_values
 
-from ..legit_percent.app import choose_optimal, init, fill_repo_info
-from ..legit_percent.data_collection import stars, forks, watchers
+from ..trust_score.app import choose_optimal, init, fill_repo_info
+from ..trust_score.data_collection import stars, forks, watchers
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
 DATA_PATH = BASE_DIR / "files/links.txt"

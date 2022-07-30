@@ -2,14 +2,14 @@ import sys
 import validators
 import requests
 import json
-from modules.legit_percent import app as lp
+from modules.trust_score import app as ts
 from modules.sensitive_info import app as si
-from modules.github_version import app as gv
-from modules.npm_version import app as nv
-from modules.pypi_version import app as pv
+from modules.git_vuln import app as gv
+from modules.npm_vuln import app as nv
+from modules.pypi_vuln import app as pv
 from modules.create_dataset import create_json, parse_json
 
-AVAILABLE_OPERATIONS = ["legit_percent","sensitive_info","github_version","pypi_version","npm_version","create_dataset"]
+AVAILABLE_OPERATIONS = ["trust_score","sensitive_info","git_vuln","pypi_vuln","npm_vuln","create_dataset"]
 ERROR = {}
 INVALID_URL = "Invalid URL. Please check the URL and try again."
 SOMETHING_WRONG = "Something went wrong. Please try again."
@@ -76,18 +76,18 @@ def main():
     global OPERATION, AVAILABLE_OPERATIONS, ERROR, URL
     if OPERATION not in AVAILABLE_OPERATIONS:
         return False
-    if OPERATION == "github_version":
+    if OPERATION == "git_vuln":
         if not is_github_url():
             ERROR['error'] = INVALID_URL
             return False
         if not gv.main(URL):
             ERROR['error'] = SOMETHING_WRONG
             return False
-    elif OPERATION == "legit_percent":
+    elif OPERATION == "trust_score":
         if not is_github_url():
             ERROR['error'] = INVALID_URL
             return False
-        if not lp.main(URL):
+        if not ts.main(URL):
             ERROR['error'] = SOMETHING_WRONG
             return False
     elif OPERATION == "sensitive_info":
@@ -97,14 +97,14 @@ def main():
         if not si.main(URL):
             ERROR['error'] = SOMETHING_WRONG
             return False
-    elif OPERATION == "npm_version":
+    elif OPERATION == "npm_vuln":
         if not is_npm_url():
             ERROR['error'] = INVALID_URL
             return False
         if not nv.main(URL):
             ERROR['error'] = SOMETHING_WRONG
             return False
-    elif OPERATION == "pypi_version":
+    elif OPERATION == "pypi_vuln":
         if not is_pypi_url():
             ERROR['error'] = INVALID_URL
             return False

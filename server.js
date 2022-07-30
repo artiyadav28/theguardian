@@ -18,7 +18,7 @@ app.post('/versionChecker',async (req,res)=>{
 //console.log( process.env.PATH );
         // spawn new child process to call the python script
 
-        const python = spawn('python3',['main.py',"github_version",url]);
+        const python = spawn('python3',['main.py',"git_vuln",url]);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');
@@ -47,7 +47,7 @@ app.post('/legitPercent',async (req,res)=>{
 //console.log( process.env.PATH );
         // spawn new child process to call the python script
 
-        const python = spawn('python3',['main.py',"legit_percent",url]);
+        const python = spawn('python3',['main.py',"trust_score",url]);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');
@@ -105,7 +105,7 @@ app.post('/pypi',async (req,res)=>{
 //console.log( process.env.PATH );
         // spawn new child process to call the python script
 
-        const python = spawn('python3',['main.py','pypi_version',url]);
+        const python = spawn('python3',['main.py','pypi_vuln',url]);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');
@@ -134,7 +134,7 @@ app.post('/npm',async (req,res)=>{
 //console.log( process.env.PATH );
         // spawn new child process to call the python script
 
-        const python = spawn('python3',['main.py','npm_version',url]);
+        const python = spawn('python3',['main.py','npm_vuln',url]);
         // collect data from script
         python.stdout.on('data', function (data) {
          console.log('Pipe data from python script ...');

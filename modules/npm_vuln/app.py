@@ -5,8 +5,8 @@ from subprocess import Popen, PIPE
 import tarfile
 import shutil
 import json
-from ..github_version.app import find_all
-from ..github_version.utils.package_json import package_json_parse, package_json_check
+from ..git_vuln.app import find_all
+from ..git_vuln.utils.package_json import package_json_parse, package_json_check
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
 PATH = BASE_DIR / "cloned_repos"

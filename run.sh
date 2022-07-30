@@ -55,6 +55,10 @@ then
     else
         run-prod $3
     fi
+elif [[ "$1" == "dataset" ]]
+then
+    pip3 install -r requirements.txt
+    python3 main.py create_dataset
 elif [[ "$1" == "clean" ]]
 then
     rm -rf ./modules/git_vuln/cloned_repos
@@ -76,6 +80,9 @@ else
     echo "-> run.sh prod <PORT> OR run.sh prod --no-build <PORT>"
     echo "The specified port must be greater than or equal to 1024"
     echo "(By default, the port is 5000)"
+    echo ""
+    echo "For dataset creation:"
+    echo "-> run.sh dataset"
     echo ""
     echo "For cleaning the cloned repositories (if any left):"
     echo "-> run.sh clean"

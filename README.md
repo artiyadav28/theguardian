@@ -147,6 +147,11 @@ To create your own dataset:
     ```bash
     python3 main.py create_dataset
     ```
+    or you can also use the *run.sh* script:
+    ```bash
+    chmod +x run.sh
+    ./run.sh dataset
+    ```
 Note that you need to have plenty of tokens in the .env file for this function.
 
 ## Clean

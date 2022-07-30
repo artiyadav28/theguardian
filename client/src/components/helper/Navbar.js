@@ -131,7 +131,7 @@ function Navbar() {
             {/* C3AED6 */}
           <Menu iconShape='square' style={{color:"black"}} className="styled-text" >
               <MenuItem active={path.includes('/dashboard')} style={{backgroundColor:(!path.includes('/dashboard')?"white":"#EDEDED")}} icon={<FiHome />}>Home <Link to="/dashboard"/></MenuItem>
-              <MenuItem active={path.includes('/trustscore')} style={{backgroundColor:(!path.includes('/trustscore')?"white":"#EDEDED")}} icon={<PercentIcon />}>Trust Score <Link to="/trustscore"/></MenuItem>
+              <MenuItem active={path.includes('/trustscores')} style={{backgroundColor:(!path.includes('/trustscore')?"white":"#EDEDED")}} icon={<PercentIcon />}>Trust Score <Link to="/trustscore"/></MenuItem>
               <MenuItem active={path.includes('/git')} style={{backgroundColor:(!path.includes('/git')?"white":"#EDEDED")}}  icon={<GitHubIcon />}>GIT <Link to="/git"/></MenuItem>
               <MenuItem active={path.includes('/pypi')} style={{backgroundColor:(!path.includes('/pypi')?"white":"#EDEDED")}} icon={<CodeIcon />}>Pypi<Link to="/pypi"/></MenuItem>
               <MenuItem active={path.includes('/npm')} style={{backgroundColor:(!path.includes('/npm')?"white":"#EDEDED")}} icon={<JavascriptIcon />}>Npm<Link to="/npm"/></MenuItem>

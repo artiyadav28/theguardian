@@ -45,7 +45,6 @@ def main():
     global REPO_INFO, DATASET
     initialise()
 
-    i = 0
     token = "INIT"
     try:
         for url in URLS:
@@ -65,12 +64,9 @@ def main():
                 "watchers":WATCHERS,
                 "forks":FORKS
             }
-            print(DATASET)
+            print(f"{url}:", json.dumps(DATASET[url]))
 
             sleep(30)
-            i += 1
-            if i == 5:
-                break
     finally:
         if token == "ERROR":
             return False

@@ -18,3 +18,12 @@ Live Instance: [theguardianproject.ml](http://theguardianproject.ml)
     Interact with NPM API to fetch dependencies of a package and identify vulnerabilities and outdated dependencies.
 - **Sensitive Info**  
     Identify hardcoded secrets, tokens, passwords, emails from a repository.
+
+## Pre-Requisites
+The following should be installed for this project to work:
+- Python3
+- Node
+- NPM
+- pm2
+
+## Development Build

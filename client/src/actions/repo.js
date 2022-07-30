@@ -9,7 +9,6 @@ export const getRepoVersionDetails = (url) => async (dispatch) => {
          const res = await axios.post('/git',{url:url})
         //  const result=res.data.replace(/'/g, '"')
         //  const info=JSON.parse(result);
-         console.log(res.data);
          dispatch({
              type: 'SET_INFO',
              payload: res.data

@@ -1,16 +1,36 @@
 #!/bin/bash
 
-# pip3 install -r requirements.txt
-# npm install
+# Go the directory of the script
+reldir="$( dirname -- "$0"; )";
+cd "$reldir"
 
-# npm run dev
+function init() {
+    pip3 install -r requirements.txt
+    npm install
+}
+
+function run-dev() {
+    cd client
+    npm install
+    cd ..
+    NODE_ENV=development npm run dev
+}
+
+function run-prod() {
+    cd client
+    rm -rf build
+    npm run build
+    cd ..
+    NODE_ENV=production pm2 start server.js
+}
 
 if [[ "$1" == "dev" ]]
 then
-    echo "dev"
+    init
+    run-dev
 elif [[ "$1" == "prod" ]]
 then
-    echo "prod"
+    init
 else
     echo "Invalid parameter!"
     echo "For development build -> run.sh dev"

@@ -4,23 +4,32 @@
 reldir="$( dirname -- "$0"; )";
 cd "$reldir"
 
-function init() {
+function server-install() {
     pip3 install -r requirements.txt
     npm install
 }
 
-function run-dev() {
+function client-install() {
     cd client
     npm install
     cd ..
+}
+
+function run-dev() {
+    server-install
     NODE_ENV=development npm run dev
 }
 
-function run-prod() {
+function build-prod() {
+    client-install
     cd client
     rm -rf build
     npm run build
     cd ..
+}
+
+function run-prod() {
+    server-install
     pm2 stop TheGuardianProject
     pm2 delete TheGuardianProject
     NODE_ENV=production pm2 start server.js --name "TheGuardianProject"
@@ -28,14 +37,24 @@ function run-prod() {
 
 if [[ "$1" == "dev" ]]
 then
-    init
     run-dev
 elif [[ "$1" == "prod" ]]
 then
-    init
+    if [[ "$2" != "--no-build" ]]
+    then
+        build-prod
+    fi
     run-prod
 else
     echo "Invalid parameter!"
-    echo "For development build -> run.sh dev"
-    echo "For production build -> run.sh prod"
+    echo ""
+    echo "For development build:"
+    echo "-> run.sh dev"
+    echo ""
+    echo "For production build:"
+    echo "For building the client as well"
+    echo "-> run.sh prod"
+    echo "For running without building the client"
+    echo "-> run.sh prod --no-build"
+    echo "(Note that you need to first build the client, atleast once to run the production server)"
 fi

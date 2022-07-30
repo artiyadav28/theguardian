@@ -35,7 +35,6 @@ const colors={
     "latest":"green"
 }
 export default function StickyHeadTable({rows}) {
-    console.log(rows);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 

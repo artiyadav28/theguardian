@@ -54,7 +54,7 @@ const VersionChecker = ({ repo: { loading1, info }, getRepoVersionDetails }) => 
       setRequirements([...arr]);
     }
   },[info])
-  // console.log(requirements)
+
   return (
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>

@@ -39,7 +39,7 @@ const Npm = ({ repo: { loading5, npm }, getNpmDetails }) => {
       setPackages([...arr]);
     }
   },[npm])
-  // console.log(requirements)
+
   return (
     <>
       <Container component='main' maxWidth='lg' sx={{ mt: 5 }}>

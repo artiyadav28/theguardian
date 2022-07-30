@@ -71,7 +71,6 @@ export const getNpmDetails = (url) => async (dispatch) => {
          const res = await axios.post('/npm',{url:url})
         //  const result=res.data.replace(/'/g, '"')
         //  const info=JSON.parse(result);
-         console.log(res.data);
          dispatch({
              type: 'SET_NPM',
              payload: res.data

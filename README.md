@@ -36,6 +36,8 @@ The following should be installed for this project to work:
 - **You can start the project with zero tokens as well**, but for using the "Trust Score" feature for repositories with a lot of stars, you will need tokens.
 - There is no upper limit to the number of tokens you can add.
 
+**NOTE:** You need a **linux environment** to run this project. The web application, however, can be accessed from any device.  
+
 ## Auto Start
 A bash script has been provided for automatically running the project.
 - ### Development Mode

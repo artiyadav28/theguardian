@@ -26,6 +26,16 @@ The following should be installed for this project to work:
 - NPM
 - pm2
 
+## GitHub Tokens
+- This project needs **GitHub Tokens** to work.
+- In the **.env** file in the project's folder, you can enter as many tokens as you want in the format:
+    ```bash
+    GITHUB_TOKEN$i=<ENTER_TOKEN_HERE>
+    ```
+    where $i is a number
+- **You can start the project with zero tokens as well**, but for using the "Trust Score" feature for repositories with a lot of stars, you will need tokens.
+- There is no upper limit to the number of tokens you can add.
+
 ## Auto Start
 A bash script has been provided for automatically running the project.
 ### Development Mode

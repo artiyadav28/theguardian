@@ -47,17 +47,22 @@ def main(url):
     API_URL = f"https://api.github.com/repos/{URL.split('/')[-2]}/{URL.split('/')[-1]}"
     REPORT = {}
     try:
-        token = init(config)
+        if len(config) > 0:
+            token = init(config)
+        else:
+            token = ""
         if token == "ERROR":
             raise Exception("Token Limit Expired")
         else:
             GITHUB_TOKEN = token
         REPO_INFO = fill_repo_info(API_URL, GITHUB_TOKEN)
-        token = choose_optimal(REPO_INFO, config)
+        if len(config)>0:
+            token = choose_optimal(REPO_INFO, config)
         if token == "ERROR":
             raise Exception("No optimal token found")
         else:
             GITHUB_TOKEN = token
+        
         REPORT = check_legit.generateReport(REPO_INFO, GITHUB_TOKEN, API_URL)
     except:
         REPORT = {}

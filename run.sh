@@ -46,6 +46,11 @@ then
         build-prod
     fi
     run-prod
+elif [[ "$1" == "clean" ]]
+then
+    rm -rf ./modules/git_vuln/cloned_repos
+    rm -rf ./modules/npm_vuln/cloned_repos
+    rm -rf ./modules/sensitive_info/cloned_repos
 else
     echo "Invalid parameter!"
     echo ""
@@ -57,5 +62,8 @@ else
     echo "-> run.sh prod"
     echo "For running without building the client"
     echo "-> run.sh prod --no-build"
-    echo "(Note that you need to first build the client, atleast once to run the production server)"
+    echo "(Note that you need to first build the client atleast once to run the production server)"
+    echo ""
+    echo "For cleaning the cloned repositories (if any left):"
+    echo "-> run.sh clean"
 fi

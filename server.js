@@ -28,10 +28,6 @@ app.post('/git',async (req,res)=>{
         python.on('close', (code) => {
         console.log(`child process close all stdio with code ${code}`);
 
-        // send data to browser
-        // console.log("hi");
-        // console.log(dataToSend);
-        // const result=JSON.parse(dataToSend);
         console.log(dataToSend);
         res.send(dataToSend);
         });
@@ -57,10 +53,6 @@ app.post('/trustscore',async (req,res)=>{
         python.on('close', (code) => {
         console.log(`child process close all stdio with code ${code}`);
 
-        // send data to browser
-        // console.log("hi");
-        // console.log(dataToSend);
-        // const result=JSON.parse(dataToSend);
         console.log(dataToSend);
         res.send(dataToSend);
         });
@@ -86,10 +78,6 @@ app.post('/sensitiveinfo',async (req,res)=>{
         python.on('close', (code) => {
         console.log(`child process close all stdio with code ${code}`);
 
-        // send data to browser
-        // console.log("hi");
-        // console.log(dataToSend);
-        // const result=JSON.parse(dataToSend);
         console.log(dataToSend);
         res.send(dataToSend);
         });
@@ -115,10 +103,6 @@ app.post('/pypi',async (req,res)=>{
         python.on('close', (code) => {
         console.log(`child process close all stdio with code ${code}`);
 
-        // send data to browser
-        // console.log("hi");
-        // console.log(dataToSend);
-        // const result=JSON.parse(dataToSend);
         console.log(dataToSend);
         res.send(dataToSend);
         });
@@ -131,7 +115,6 @@ app.post('/npm',async (req,res)=>{
         const {url}=req.body;
         console.log(url);
         var dataToSend;
-//console.log( process.env.PATH );
         // spawn new child process to call the python script
 
         const python = spawn('python3',['main.py','npm_vuln',url]);
@@ -144,10 +127,6 @@ app.post('/npm',async (req,res)=>{
         python.on('close', (code) => {
         console.log(`child process close all stdio with code ${code}`);
 
-        // send data to browser
-        // console.log("hi");
-        // console.log(dataToSend);
-        // const result=JSON.parse(dataToSend);
         console.log(dataToSend);
         res.send(dataToSend);
         });
@@ -161,14 +140,6 @@ if (process.env.NODE_ENV === "production") {
       res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
-// app.use((req, res, next) => {
-//     next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
-//   });
-  
-//   // convert error to ApiError, if needed
-//   app.use(errorConverter);
-  
-//   // handle error
-//   app.use(errorHandler);
+
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`server started on port ${PORT}`))

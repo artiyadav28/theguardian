@@ -118,22 +118,23 @@ NODE_ENV=production PORT=1025 pm2 start server.js --name "TheGuardianProject"
 Access the website from http://localhost:1025  
 (The specified port must be greater than or equal to 1024)  
   
-**NOTE:** The first time you use **GIT** or **NPM** in the website, it may take a long time to get the results or it might give an error. This is only a one-time thing because the corresponding python module (js2py) requires some time to initialise.
-In order to not face this issue, after starting the project, run this command:
-```bash
-python3 -c "import js2py; js2py.require('compare-versions')"
-```
-This will initialise the module.  
-(If you are using the *run.sh* script, then you need not do this. The script automatically initialises this module.)  
+### Common Issues
+- The first time you use **GIT** or **NPM** in the website, it may take a long time to get the results or it might give an error. This is only a one-time thing because the corresponding python module (js2py) requires some time to initialise.
+    In order to not face this issue, after starting the project, run this command:
+    ```bash
+    python3 -c "import js2py; js2py.require('compare-versions')"
+    ```
+    This will initialise the module.  
+    (If you are using the *run.sh* script, then you need not do this. The script automatically initialises this module.)  
 
-**NOTE:** Sometimes, when running in development mode, you might get an error like:
-```bash
-options.allowedHosts[0] should be a non-empty string
-```
-To fix this, set the environment variable `DANGEROUSLY_DISABLE_HOST_CHECK` to `true` by running:
-```bash
-export DANGEROUSLY_DISABLE_HOST_CHECK=true
-```
+- Sometimes, when running in development mode, you might get an error like:
+    ```bash
+    options.allowedHosts[0] should be a non-empty string
+    ```
+    To fix this, set the environment variable `DANGEROUSLY_DISABLE_HOST_CHECK` to `true` by running:
+    ```bash
+    export DANGEROUSLY_DISABLE_HOST_CHECK=true
+    ```
 
 ## Dataset Collection
 The script used for generating the dataset for trust score is also included.

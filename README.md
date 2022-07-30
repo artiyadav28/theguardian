@@ -123,7 +123,8 @@ In order to not face this issue, after starting the project, run this command:
 ```bash
 python3 -c "import js2py; js2py.require('compare-versions')"
 ```
-This will initialise the module.
+This will initialise the module.  
+(If you are using the *run.sh* script, then you need not do this. The script automatically initialises this module.)  
 
 **NOTE:** Sometimes, when running in development mode, you might get an error like:
 ```bash

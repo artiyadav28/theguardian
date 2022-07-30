@@ -59,7 +59,15 @@ If you do not wish to build the client folder, run:
 ```bash
 ./run.sh prod --no-build
 ```
-Access the website from http://localhost:5000
+Access the website from http://localhost:5000  
+  
+You can also specify a custom port using:
+```bash
+./run.sh prod 1025
+./run.sh prod --no-build 1025
+```
+This will start the server on port 1025 (http://localhost:1025).  
+By default, the port is 5000 if you do not specify anything.
 
 ## Manual Start
 ### Development Mode
@@ -100,7 +108,13 @@ To start the project in production mode, follow these steps:
     ```bash
     NODE_ENV=production pm2 start server.js --name "TheGuardianProject"
     ```
-Access the website from http://localhost:5000
+Access the website from http://localhost:5000  
+  
+If you wish to specify a port as well, then run:
+```bash
+NODE_ENV=production PORT=1025 pm2 start server.js --name "TheGuardianProject"
+```
+Access the website from http://localhost:1025 
 
 ## Dataset Collection
 The script used for generating the dataset for trust score is also included.

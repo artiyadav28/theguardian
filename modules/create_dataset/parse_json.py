@@ -7,7 +7,7 @@ import shutil
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
 DATA_PATH = BASE_DIR / "files/data.json"
 STORE_PATH = BASE_DIR / "files/dataset.csv"
-FINAL_PATH = BASE_DIR / "../legit_percent/data_collection/Dataset"
+FINAL_PATH = BASE_DIR / "../trust_score/data_collection/Dataset"
 
 def main():
     data = {}

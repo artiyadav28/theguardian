@@ -46,7 +46,7 @@ def main():
     initialise()
 
     i = 0
-    token = "ERROR"
+    token = "INIT"
     try:
         for url in URLS:
             if url in DATASET.keys():

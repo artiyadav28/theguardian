@@ -39,7 +39,7 @@ app.post('/git',async (req,res)=>{
         console.log(e);
     }
 })
-app.post('/trust_score',async (req,res)=>{
+app.post('/trustscore',async (req,res)=>{
     try{
         const {url}=req.body;
         console.log(url);
@@ -68,7 +68,7 @@ app.post('/trust_score',async (req,res)=>{
         console.log(e);
     }
 })
-app.post('/sensitive_info',async (req,res)=>{
+app.post('/sensitiveinfo',async (req,res)=>{
     try{
         const {url}=req.body;
         console.log(url);

@@ -20,7 +20,8 @@ Live Instance: [theguardianproject.ml](http://theguardianproject.ml)
     Identify hardcoded secrets, tokens, passwords, emails from a repository.
 
 ## Pre-Requisites
-You need a **linux environment** to run this project. The web application, however, can be accessed from any device.  
+You need a **LINUX ENVIRONMENT** to run this project. The web application, however, can be accessed from any device.  
+    
 The following should be installed for this project to work:
 - Python3
 - Node

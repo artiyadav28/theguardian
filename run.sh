@@ -21,7 +21,9 @@ function run-prod() {
     rm -rf build
     npm run build
     cd ..
-    NODE_ENV=production pm2 start server.js
+    pm2 stop TheGuardianProject
+    pm2 delete TheGuardianProject
+    NODE_ENV=production pm2 start server.js --name "TheGuardianProject"
 }
 
 if [[ "$1" == "dev" ]]
@@ -31,6 +33,7 @@ then
 elif [[ "$1" == "prod" ]]
 then
     init
+    run-prod
 else
     echo "Invalid parameter!"
     echo "For development build -> run.sh dev"

@@ -46,6 +46,7 @@ def main():
     initialise()
 
     i = 0
+    token = "ERROR"
     try:
         for url in URLS:
             if url in DATASET.keys():
@@ -64,7 +65,7 @@ def main():
                 "watchers":WATCHERS,
                 "forks":FORKS
             }
-            # print(DATASET)
+            print(DATASET)
 
             sleep(30)
             i += 1

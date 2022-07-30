@@ -101,7 +101,11 @@ A bash script has been provided for automatically running the project.
         npm install
         ```
     - Go to the *client* folder:  
-        If you want to build the client, run:
+        If you want to build the client, first delete any existing build folder:
+        ```bash
+        rm -rf ./client/build
+        ```
+        and then run:
         ```bash
         npm install
         npm run build

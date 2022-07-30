@@ -77,7 +77,7 @@ To start the project in the development mode manually, follow these steps:
     ```bash
     NODE_ENV=development npm run dev
     ```
-    (You need not set the NODE_ENV environment variable to 'development', just make sure that it is not set to 'production')
+    (You need not set the NODE_ENV environment variable to 'development', just make sure that it is not set to 'production')  
 The server will start on port 5000, and the client on port 3000. You can access the website by visiting: http://localhost:3000
 
 ### Production Mode

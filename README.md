@@ -125,7 +125,7 @@ python3 -c "import js2py; js2py.require('compare-versions')"
 ```
 This will initialise the module.
 
-**NOTE:** Sometimes, when running dev on a server, you might get an error like:
+**NOTE:** Sometimes, when running in development mode, you might get an error like:
 ```bash
 options.allowedHosts[0] should be a non-empty string
 ```

@@ -17,6 +17,7 @@ function client-install() {
 
 function run-dev() {
     server-install
+    client-install
     NODE_ENV=development npm run dev
 }
 

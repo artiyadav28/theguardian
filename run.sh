@@ -7,6 +7,7 @@ re='^[0-9]+$'
 
 function server-install() {
     pip3 install -r requirements.txt
+    python3 -c "import js2py; js2py.require('compare-versions')"
     npm install
 }
 
